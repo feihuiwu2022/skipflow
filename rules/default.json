@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "updated": "2026-11-08",
+  "apps": [
+    {
+      "package": "com.phoenix.read",
+      "name": "红果短剧",
+      "activities": [],
+      "suspect": "广告|跳过|上滑继续|\\d+\\s*[sS秒]\\s*后",
+      "ocr": { "intervalMs": 1200, "regions": [[0, 0, 1, 0.12], [0, 0.85, 1, 1]] },
+      "rules": [
+        {
+          "key": "skip-button",
+          "name": "跳过/关闭广告按钮",
+          "all": [{ "labelRegex": "^\\s*(跳过|跳过广告|关闭广告)\\s*$" }],
+          "none": [{ "labelRegex": "\\d+\\s*[sS秒]?\\s*后" }],
+          "action": { "type": "click", "target": 0 },
+          "delayMs": 300,
+          "cooldownMs": 2000,
+          "maxAttempts": 2
+        },
+        {
+          "key": "swipe-continue",
+          "name": "上滑继续观看短剧",
+          "all": [{ "cls": "#ocr", "textRegex": "上滑继续观看", "region": [0, 0.85, 1, 1] }],
+          "action": { "type": "swipe", "from": [0.5, 0.8], "to": [0.5, 0.2], "durationMs": 500 },
+          "delayMs": 800,
+          "cooldownMs": 2500,
+          "maxAttempts": 2
+        },
+        {
+          "key": "countdown",
+          "name": "倒计时广告（等待，期间静音）",
+          "all": [{ "labelRegex": "\\d+\\s*[sS秒]\\s*后?\\s*可?\\s*(跳过|关闭|继续)" }],
+          "action": { "type": "wait" },
+          "mute": true
+        }
+      ]
+    }
+  ]
+}

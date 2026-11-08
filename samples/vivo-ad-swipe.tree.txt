@@ -1,0 +1,287 @@
+# suspect: 广告 | com.phoenix.read | null
+        LinearLayout #action_bar_root [0,0][720,1600]
+          FrameLayout #content [0,0][720,1600]
+            ViewGroup #hzr [0,0][720,1600]
+              FrameLayout #evx [0,0][720,1600]
+                FrameLayout #igo [0,0][720,1600]
+                  ImageView #ih2 [0,0][0,0] hidden
+                  FrameLayout #ih3 [0,0][720,1600]
+                  ViewPager #dgm [0,0][720,1600]
+                      FrameLayout #hs5 [-1,1][717,1599]
+                      ViewGroup #root_view [-755,0][-35,1600]
+                        FrameLayout #d3e [-395,0][-395,0] hidden
+                        FrameLayout #idr [-755,0][-35,0] hidden
+                        FrameLayout #got [-755,0][-35,1600]
+                          ViewPager #l0 [-755,0][-35,1600]
+                                View #htx [-755,-1599][-35,0] hidden
+                                RelativeLayout #hcs [-755,0][-35,0] hidden
+                                    ViewGroup #hhi [-755,-111][-35,0] hidden
+                                  LinearLayout #ixp [-483,-556][-307,0] clk hidden
+                                      ImageView #f5s [-463,-569][-431,0] hidden
+                                      TextView #ckg text="全屏观看" [-423,-568][-327,0] hidden
+                                ViewGroup #hct [-755,0][-35,0] hidden
+                                  FrameLayout #dhy [-755,0][-35,0] hidden
+                                  FrameLayout #e59 [-755,-111][-35,0] hidden
+                                  FrameLayout #ci5 [-755,-1407][-35,0] hidden
+                                    FrameLayout #ci6 [-755,-1407][-35,0] hidden
+                                  FrameLayout #czj [-395,-333][-395,0] hidden
+                                  FrameLayout #aa_ [-723,-155][-236,0] hidden
+                                      FrameLayout #hd8 [-723,-155][-236,0] hidden
+                                        LinearLayout #hd9 [-723,-155][-236,0] hidden
+                                        LinearLayout #ci3 [-723,-333][-723,0] hidden
+                                        FrameLayout #e2t [-723,-309][-236,0] hidden
+                                        FrameLayout #hd7 [30,-307][516,1] hidden
+                                        LinearLayout #root_view [32,0][32,-334] hidden
+                                        FrameLayout #fm5 [-723,-242][-236,0] hidden
+                                        ViewGroup #js4 [32,0][519,-251] clk hidden
+                                        TextView #d4 text="天道余途：苍途问道4" [32,0][340,-267] hidden
+                                        ImageView #right_icon [348,0][364,-272] hidden
+                                        FrameLayout #h_s [-723,-242][-236,0] hidden
+                                        FrameLayout #hhm [-723,-204][-236,0] hidden
+                                        ViewGroup #hxi [32,0][519,-205] hidden
+                                        LinearLayout #m4 [32,0][519,-205] hidden
+                                        RelativeLayout #ghu [32,0][519,-205] hidden
+                                        TextView #ght text="第122集 | 天道倾颓，残道留世…" [32,0][519,-205] clk hidden
+                                        TextView #tv_expand text="展开" [463,0][519,-205] clk hidden
+                                        FrameLayout #fnp [32,0][519,-205] hidden
+                                        LinearLayout #e2o [32,0][519,-156] hidden
+                                        ImageView #dtq [32,0][56,-160] hidden
+                                        TextView #i5z text="作者声明：内容由AI生成" [64,0][328,-156] hidden
+                                  FrameLayout #gwe [-135,-183][-35,0] hidden
+                                        ViewGroup #fld [620,0][712,-184] hidden
+                                        ViewGroup #hh7 [620,0][712,-628] clk hidden
+                                        ViewGroup #exm [620,0][712,-628] hidden
+                                        ViewGroup #exm [620,0][712,-628] hidden
+                                        View #cyq [620,0][712,-661] hidden
+                                        ImageView #de5 [620,0][712,-661] hidden
+                                        TextView #glw text="25.1万" [631,0][701,-628] hidden
+                                        ImageView #dec [712,0][712,-657] hidden
+                                        LinearLayout #c7o [620,0][712,-488] clk hidden
+                                        FrameLayout #c85 [620,0][712,-521] hidden
+                                        ImageView #hts [620,0][712,-521] hidden
+                                        TextView #h_ text="45" [620,0][712,-488] hidden
+                                        LinearLayout #f6x [620,0][712,-343] clk hidden
+                                        FrameLayout #co7 [620,0][712,-380] hidden
+                                        ImageView #hts [620,0][712,-380] hidden
+                                        FrameLayout #z8 [620,0][712,-380] hidden
+                                        TextView #lg text="1334" [620,0][712,-343] hidden
+                                        LinearLayout #hff [620,0][712,-199] clk hidden
+                                        FrameLayout #hfh [620,0][712,-236] hidden
+                                        ImageView #elq [620,0][712,-236] hidden
+                                        TextView #jei text="分享" [620,0][712,-199] hidden
+                                  FrameLayout #bwa [-67,-151][-67,0] hidden
+                                  FrameLayout #hhj [-755,-91][-35,0] hidden
+                                    FrameLayout #ha5 [0,0][720,-92] hidden
+                                      FrameLayout #c6 [611,0][720,-92] hidden
+                                        ImageView #eng [679,0][687,-110] hidden
+                                      View #h32 [0,0][720,-92] hidden
+                                  FrameLayout #bottom_relate_series_container [-755,-111][-35,0] hidden
+                                  FrameLayout #book_container [-755,-111][-35,0] hidden
+                                  View #h_y [-755,-91][-35,0] hidden
+                                  FrameLayout #hh [-723,-15][-67,0] hidden
+                                      LinearLayout #am4 [32,0][600,-16] hidden
+                                        FrameLayout #hgv [32,0][600,-16] clk hidden
+                                        ViewGroup #root_layout [32,0][600,-16] hidden
+                                        TextView #joj text="选集" [64,0][120,-37] hidden
+                                        TextView #jr1 text=" · 已完结 · 全1000集" [120,0][387,-37] hidden
+                                        ImageView #axy [528,0][568,-46] hidden
+                                      LinearLayout #frx [600,0][688,-28] hidden
+                                        LinearLayout #e20 [632,0][688,-28] clk hidden
+                                        FrameLayout #e1y [632,0][688,-28] hidden
+                                        ImageView #e1z [632,0][688,-28] hidden
+                                RelativeLayout #hdw [-755,0][-35,0] hidden
+                                FrameLayout #hjc [-755,-111][-35,0] hidden
+                                FrameLayout #dkj [-755,-111][-35,0] hidden
+                                FrameLayout #cj7 [-67,-1311][-67,0] hidden
+                                TextView #hds text="（番茄）微短剧备字（2026）第266284号" [-755,-1006][-59,0] hidden
+                                    FrameLayout #container [0,0][720,1600]
+                                      FrameLayout #d_w [0,0][720,1488]
+                                        View #ttlive_player_render_view [0,0][720,1488]
+                                        ViewGroup desc="广告" [541,70][621,126]
+                                        ViewGroup desc="优选好物" [126,1276][206,1308]
+                                        ViewGroup desc="商家热卖" [246,1276][326,1308]
+                                        ViewGroup desc="查看详情" [404,1277][508,1307]
+                                        ViewGroup desc="黑森灵官方账号" [32,1352][256,1396]
+                                        ViewGroup desc="黑森灵金婷姐妹来大集刷牙啦！！" [32,1412][452,1456]
+                                    FrameLayout #hi [0,1488][720,1600]
+                                        LinearLayout #amo [0,1524][720,1564]
+                                        TextView #an1 text="上滑继续观看短剧" [228,1524][452,1562]
+                                        ImageView #an0 [452,1524][492,1564]
+                                View #htx [0,1600][720,1600] hidden
+                                RelativeLayout #hcs [0,1600][720,1600] hidden
+                                    ViewGroup #hhi [0,2528][720,1600] hidden
+                                  LinearLayout #ixp [272,2586][448,1600] clk hidden
+                                      ImageView #f5s [292,2598][324,1600] hidden
+                                      TextView #ckg text="全屏观看" [332,2598][428,1600] hidden
+                                ViewGroup #hct [0,1600][720,1600] hidden
+                                  FrameLayout #dhy [0,1600][720,1600] hidden
+                                  FrameLayout #e59 [0,1600][720,1600] hidden
+                                  FrameLayout #ci5 [0,1792][720,1600] hidden
+                                    FrameLayout #ci6 [0,1792][720,1600] hidden
+                                  FrameLayout #czj [360,2866][360,1600] hidden
+                                  FrameLayout #aa_ [32,2866][519,1600] hidden
+                                      FrameLayout #hd8 [32,2866][519,1600] hidden
+                                        LinearLayout #hd9 [32,2866][519,1600] hidden
+                                        LinearLayout #ci3 [32,2866][32,1600] hidden
+                                        FrameLayout #e2t [32,2866][519,1600] hidden
+                                        FrameLayout #hd7 [32,2866][519,1600] hidden
+                                        LinearLayout #root_view [32,2866][32,1600] hidden
+                                        FrameLayout #fm5 [32,2890][519,1600] hidden
+                                        ViewGroup #js4 [32,2890][519,1600] clk hidden
+                                        TextView #d4 text="天道余途：苍途问道4" [32,2890][340,1600] hidden
+                                        ImageView #right_icon [348,2896][364,1600] hidden
+                                        FrameLayout #h_s [32,2957][519,1600] hidden
+                                        FrameLayout #hhm [32,2957][519,1600] hidden
+                                        ViewGroup #hxi [32,2957][519,1600] hidden
+                                        LinearLayout #m4 [32,2957][519,1600] hidden
+                                        RelativeLayout #ghu [32,2957][519,1600] hidden
+                                        TextView #ght text="第123集 | 天道倾颓，残道留世…" [32,2957][519,1600] clk hidden
+                                        TextView #tv_expand text="展开" [463,2957][519,1600] clk hidden
+                                        FrameLayout #fnp [32,2995][519,1600] hidden
+                                        LinearLayout #e2o [32,2995][519,1600] hidden
+                                        ImageView #dtq [32,3016][56,1600] hidden
+                                        TextView #i5z text="作者声明：内容由AI生成" [64,3011][328,1600] hidden
+                                  FrameLayout #gwe [620,2394][720,1600] hidden
+                                        ViewGroup #fld [620,2432][712,1600] hidden
+                                        ViewGroup #hh7 [620,2447][712,1600] clk hidden
+                                        ViewGroup #exm [620,2447][712,1600] hidden
+                                        ViewGroup #exm [620,2447][712,1600] hidden
+                                        View #cyq [620,2447][712,1600] hidden
+                                        ImageView #de5 [620,2447][712,1600] hidden
+                                        TextView #glw text="25.1万" [631,2539][701,1600] hidden
+                                        LinearLayout #c7o [620,2587][712,1600] clk hidden
+                                        FrameLayout #c85 [620,2587][712,1600] hidden
+                                        ImageView #hts [620,2587][712,1600] hidden
+                                        TextView #h_ text="50" [620,2679][712,1600] hidden
+                                        LinearLayout #f6x [620,2728][712,1600] clk hidden
+                                        FrameLayout #co7 [620,2728][712,1600] hidden
+                                        FrameLayout #z8 [620,2728][712,1600] hidden
+                                        ImageView #hts [620,2728][712,1600] hidden
+                                        TextView #lg text="1376" [620,2824][712,1600] hidden
+                                        LinearLayout #hff [620,2872][712,1600] clk hidden
+                                        FrameLayout #hfh [620,2872][712,1600] hidden
+                                        ImageView #elq [620,2872][712,1600] hidden
+                                        TextView #jei text="分享" [620,2968][712,1600] hidden
+                                  FrameLayout #bwa [688,3048][688,1600] hidden
+                                  FrameLayout #hhj [0,3068][720,1600] hidden
+                                    FrameLayout #ha5 [0,3068][720,1600] hidden
+                                      FrameLayout #c6 [316,3068][460,1600] hidden
+                                        ImageView #eng [384,3082][392,1600] hidden
+                                      View #h32 [0,3068][720,1600] hidden
+                                  FrameLayout #bottom_relate_series_container [0,3088][720,1600] hidden
+                                  FrameLayout #book_container [0,3088][720,1600] hidden
+                                  View #h_y [0,3088][720,1600] hidden
+                                  FrameLayout #hh [32,3104][688,1600] hidden
+                                      LinearLayout #am4 [32,3104][600,1600] hidden
+                                        FrameLayout #hgv [32,3104][600,1600] clk hidden
+                                        ViewGroup #root_layout [32,3104][600,1600] hidden
+                                        TextView #joj text="选集" [64,3125][120,1600] hidden
+                                        TextView #jr1 text=" · 已完结 · 全1000集" [120,3125][387,1600] hidden
+                                        ImageView #axy [528,3134][568,1600] hidden
+                                      LinearLayout #frx [600,3116][688,1600] hidden
+                                        LinearLayout #e20 [632,3116][688,1600] clk hidden
+                                        FrameLayout #e1y [632,3116][688,1600] hidden
+                                        ImageView #e1z [632,3116][688,1600] hidden
+                                RelativeLayout #hdw [0,1600][720,1600] hidden
+                                FrameLayout #hjc [0,1600][720,1600] hidden
+                                FrameLayout #dkj [0,1740][720,1600] hidden
+                                FrameLayout #cj7 [688,1888][688,1600] hidden
+                                TextView #hds text="（番茄）微短剧备字（2026）第266284号" [0,2165][696,1600] hidden
+                        RelativeLayout #fgi [-755,0][-35,1600]
+                        FrameLayout #f5r [-755,0][-35,1600]
+                        View #ke [-755,0][-35,216]
+                        FrameLayout #i_h [-755,72][-35,160]
+                              View #g2x [0,72][720,160]
+                              ImageView #eny [32,92][80,140] clk
+                              TextView #jjj text="返回" [88,72][688,160]
+                              LinearLayoutCompat #d40 [720,72][720,160] hidden
+                      ViewGroup #root_view [720,0][720,1600] hidden
+                          ImageView #icx [720,0][720,1600] hidden
+                        ViewGroup #az [720,72][720,1600] hidden
+                          LinearLayout #e2r [720,160][720,528] hidden
+                            FrameLayout #c_8 [720,160][720,528] hidden
+                              FrameLayout #ere [720,160][720,528] hidden
+                                ComposeView #erg [720,160][720,528] hidden
+                                    TextView text="天道余途：苍途问道4" [972,200][1357,247] hidden
+                                    TextView text="全1000集" [972,263][1092,296] hidden
+                                    TextView text="红果热度值5685万" [1112,263][1346,296] hidden
+                                      TextView text="玄幻" [988,336][1036,364] hidden
+                                      TextView text="3D" [1108,336][1139,364] hidden
+                                      TextView text="玄幻仙侠" [1211,336][1307,364] hidden
+                          ScrollView #h51 [720,528][720,1600] hidden
+                              FrameLayout #e5l [720,528][720,683] hidden
+                                FrameLayout #c_c [720,528][720,683] hidden
+                                  FrameLayout #ere [720,528][720,683] hidden
+                                    ComposeView #erg [720,528][720,683] hidden
+                                        TextView text="剧情简介" [752,528][880,566] hidden
+                                        TextView text="天道倾颓，残道留世，是为天道余途。少年余羡生于凡村，机缘踏上仙路，拜入白云宗。闯试炼，… " [752,595][1408,672] hidden
+                                        TextView text="展开" [1340,650][1396,683] clk hidden
+                              FrameLayout #aze [720,683][720,937] hidden
+                                FrameLayout #c__ [720,683][720,937] hidden
+                                  FrameLayout #ere [720,683][720,937] hidden
+                                    ComposeView #erg [720,683][720,937] hidden
+                                        View desc="Subscribed" [778,819][794,835] hidden
+                                        TextView text="关注" [798,815][838,839] hidden
+                                        TextView text="动量脉冲" [752,859][864,892] hidden
+                                        TextView text="出品方" [772,896][844,924] hidden
+                              FrameLayout #sl [720,937][720,937] hidden
+                              FrameLayout #dbf [720,937][720,1194] hidden
+                                  TextView #j7u text="剧评" [752,985][720,1028] clk hidden
+                                  FrameLayout #score_card_v2 [752,1060][720,1177] hidden
+                                      ViewGroup #f5d [752,1060][720,1177] clk hidden
+                                        ViewGroup #h3s [752,1060][720,1177] hidden
+                                        TextView #ilj text="未开分" [784,1105][720,1133] hidden
+                                        ViewGroup #h3z [920,1060][720,1177] hidden
+                                        LinearLayout #h40 [920,1084][720,1112] clk hidden
+                                        TextView #jcu text="红果分" [920,1084][720,1112] hidden
+                                        ImageView #ekq [996,1086][720,1110] hidden
+                                        TextView #jct [920,1120][720,1153] hidden
+                                      View #h41 [1102,1088][720,1149] hidden
+                                      ViewGroup #gvx [1103,1060][720,1177] clk hidden
+                                        ViewGroup #gx_ [1103,1074][720,1163] hidden
+                                        TextView #jhe text="点击或滑动评分" [1172,1074][720,1107] hidden
+                                        View #ht3 [1128,1115][720,1163] hidden
+                                  View #jth [720,1177][720,1178] hidden
+                                  FrameLayout #g9a [720,1194][720,1194] hidden
+                                    FrameLayout #g2q [720,1194][720,1194] hidden
+                                      RecyclerView #h0_ [720,1194][720,1194] hidden
+                              FrameLayout #gqo [720,1194][720,1194] hidden
+                              FrameLayout #gpy [720,1194][720,1194] hidden
+                              FrameLayout #hyp [720,1194][720,1194] hidden
+                              FrameLayout #d0f [720,1194][720,1194] hidden
+                              FrameLayout #go6 [720,1194][720,1600] hidden
+                                    TextView #title text="猜你喜欢" [752,1242][720,1285] hidden
+                                    FrameLayout #hsn [720,1317][720,1600] hidden
+                                        FrameLayout #mx [720,1317][720,1600] hidden
+                                        FrameLayout #kd [720,1317][720,1600] clk hidden
+                                        FrameLayout #hnt [720,1317][720,1600] hidden
+                                        FrameLayout #e2e [744,1317][720,1600] hidden
+                                        View #f7n [768,1875][720,1600] hidden
+                                        View #f7o [768,1923][720,1600] hidden
+                                        View #f7p [768,1971][720,1600] hidden
+                                        FrameLayout #e2f [1088,1317][720,1600] hidden
+                                        View #f7n [1112,1875][720,1600] hidden
+                                        View #f7o [1112,1923][720,1600] hidden
+                                        View #f7p [1112,1971][720,1600] hidden
+                                        FrameLayout #e2g [744,2043][720,1600] hidden
+                                        View #f7n [768,2601][720,1600] hidden
+                                        View #f7o [768,2649][720,1600] hidden
+                                        View #f7p [768,2697][720,1600] hidden
+                                        FrameLayout #e2h [1088,2043][720,1600] hidden
+                                        View #f7n [1112,2601][720,1600] hidden
+                                        View #f7o [1112,2649][720,1600] hidden
+                                        View #f7p [1112,2697][720,1600] hidden
+                        FrameLayout #c0 [720,72][720,160] hidden
+                          FrameLayout #c_f [720,72][720,160] hidden
+                            FrameLayout #ere [720,72][720,160] hidden
+                              ComposeView #erg [720,72][720,160] hidden
+                                  ImageView desc="返回" [752,92][800,140] clk hidden
+                                  TextView text="天道余途：苍途问道4" [800,95][1232,137] hidden
+                                  ImageView desc="分享" [1272,92][1320,140] clk hidden
+                                  ImageView desc="更多" [1360,92][1408,140] clk hidden
+                          FrameLayout #ere [720,1488][720,1600] hidden
+                            ComposeView #erg [720,1488][720,1600] hidden
+                                  TextView text="收藏" [900,1528][956,1561] hidden
+                                  TextView text="写评价" [1230,1528][1314,1561] hidden
+                  ImageView #ih0 [360,800][360,800] hidden
+            View #fj [0,0][1,1]

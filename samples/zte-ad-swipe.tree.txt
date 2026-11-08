@@ -1,0 +1,258 @@
+# adb | com.phoenix.read | com.dragon.read.component.shortvideo.impl.ShortSeriesActivity
+    FrameLayout #status_bar_container [0,0][720,66]
+      FrameLayout #status_bar [0,0][720,66]
+        LinearLayout #status_bar_contents [0,0][720,66]
+            LinearLayout #status_bar_left_side [22,0][295,66]
+              TextView #clock text="18:44" desc="18:44" [22,0][79,66]
+              FrameLayout #notification_icon_area [79,0][295,66]
+                LinearLayout #notification_icon_area_inner [79,0][295,66]
+                  FrameLayout #notificationIcons [79,0][295,66]
+                    ImageView desc="Android 系统通知：已连接到 USB 调试" [79,19][107,47]
+                    ImageView desc="SkipFlow 短剧续播通知：SkipFlow 运行中" [107,19][135,47]
+                    ImageView desc="设置通知：USB" [135,19][163,47]
+          View #cutout_space_view [295,0][425,45]
+          LinearLayout #system_icon_area [425,0][698,66]
+            LinearLayout #system_icons [425,0][698,66]
+              LinearLayout #statusIcons [425,0][630,66]
+                ImageView desc="闹钟" [464,19][492,47]
+                ImageView desc="振铃器振动。" [494,19][522,47]
+                FrameLayout #wifi_combo desc="WLAN 信号满格。" [524,19][552,47]
+                  FrameLayout #wifi_group [524,19][552,47]
+                    ImageView #wifi_inout [524,19][524,19] hidden
+                    ImageView #wifi_signal [524,19][552,47]
+                FrameLayout #mobile_combo desc="手机信号满格。" [588,19][628,47]
+                  LinearLayout #mobile_group [588,19][628,47]
+                    FrameLayout #mobile_signal_group [588,19][628,47]
+                      ImageView #mobile_signal [588,19][628,47]
+                      ImageView #mobile_type desc="5GSA" [588,19][628,47]
+              RelativeLayout #battery desc="正在充电，已完成 80%。" [630,0][698,66]
+                FrameLayout #mfv_battery_container [630,0][678,66]
+                  ImageView #mfv_battery_meterview desc="正在充电，已完成 80%。" [630,19][678,47]
+                  TextView #mfv_battery_level_inside text="80" [644,19][664,47]
+                ImageView #mfv_charge_indicator_outside [678,0][698,66]
+  LinearLayout #arrow_layout [692,349][764,505] clk
+        LinearLayout #got_it_btn [708,363][748,491]
+          View #got_it_btn_inner [710,365][746,489]
+        LinearLayout #action_bar_root [0,0][720,1600]
+          FrameLayout #content [0,0][720,1600]
+            ViewGroup #is_ [0,0][720,1600]
+              FrameLayout #mq [0,0][720,1600]
+                FrameLayout #ffo [0,0][720,1600]
+                    ImageView #jaz [0,0][0,0] hidden
+                    FrameLayout #jb0 [0,0][720,1600]
+                    ViewPager #dwx [0,0][720,1600]
+                      FrameLayout #jal [0,0][720,1600]
+                        FrameLayout #ikc [0,0][720,1600]
+                        ViewGroup #root_view [0,0][720,1600]
+                          FrameLayout #di2 [360,0][360,0] hidden
+                          FrameLayout #j8k [0,0][720,0] hidden
+                          FrameLayout #hc5 [0,0][720,1600]
+                            ViewPager #l0 [0,0][720,1600]
+                                      FrameLayout #container [0,0][720,0] hidden
+                                        FrameLayout #dq4 [0,0][720,-112] hidden
+                                        ViewGroup desc="钱坤-福哥量价" [232,0][438,-376] hidden
+                                        ViewGroup desc="加入我的战队，每天三支不迷路！" [232,0][656,-324] hidden
+                                      FrameLayout #hi [0,0][720,0] hidden
+                                        View #gap [0,0][0,-112] hidden
+                                        LinearLayout #apv [0,0][720,-36] hidden
+                                        ImageView #aq8 [224,0][264,-36] hidden
+                                        TextView #aq9 text="上滑继续观看短剧" [272,0][496,-38] hidden
+                                  View #im4 [0,0][720,0] hidden
+                                  RelativeLayout #i4q [0,0][720,1600]
+                                  RelativeLayout #i3a [0,0][720,1600]
+                                        FrameLayout #a0s [0,0][720,1488]
+                                        View #c8x [0,0][720,1178]
+                                        ImageView #b1 [296,680][424,808]
+                                    LinearLayout #jsx [272,986][448,1043] clk
+                                        ImageView #fpu [292,998][324,1030]
+                                        TextView #cyl text="全屏观看" [332,998][428,1031]
+                                  ViewGroup #i3b [0,0][720,1600]
+                                    FrameLayout #dyo [0,0][720,1600]
+                                    FrameLayout #emo [0,0][720,1488]
+                                    FrameLayout #cw3 [0,0][720,186]
+                                      FrameLayout #cw4 [0,186][720,186] hidden
+                                    FrameLayout #de0 [360,1279][360,1279] hidden
+                                    FrameLayout #acm [32,1279][519,1456]
+                                        FrameLayout #i41 [32,1279][519,1456]
+                                        LinearLayout #i42 [32,1279][519,1456]
+                                        LinearLayout #cw0 [32,1279][32,1279] hidden
+                                        FrameLayout #ejz [32,1303][519,1303] hidden
+                                        FrameLayout #i40 [32,1303][519,1303] hidden
+                                        LinearLayout #root_view [32,1303][32,1303] hidden
+                                        FrameLayout #g89 [32,1303][519,1370]
+                                        ViewGroup #kop [32,1303][519,1362]
+                                        TextView #d4 text="太一药神：归凡济世" [32,1303][320,1346] clk
+                                        ImageView #right_icon [328,1309][344,1341] clk
+                                        FrameLayout #hzx [32,1370][519,1370] hidden
+                                        FrameLayout #i8l [32,1370][519,1408]
+                                        ViewGroup #ipx [32,1370][519,1408]
+                                        LinearLayout #m5 [32,1370][519,1408]
+                                        RelativeLayout #h69 [32,1370][519,1408]
+                                        TextView #h68 text="第3集 | 普通青年张凡受尽未婚…" [32,1370][519,1408] clk
+                                        TextView #tv_expand text="展开" [463,1370][519,1408] clk
+                                        FrameLayout #g9s [32,1408][519,1408] hidden
+                                        FrameLayout #i8g [32,1408][519,1408] hidden
+                                        LinearLayout #eju [32,1408][519,1456]
+                                        ViewGroup #i3y [32,1424][519,1456]
+                                        ImageView #eaq [32,1428][56,1452]
+                                        TextView #iz6 text="作者声明：内容由AI生成" [64,1426][326,1454]
+                                    FrameLayout #hkl [612,834][720,1456]
+                                        ViewGroup #g7h [612,872][704,1456]
+                                        ViewGroup #i84 [612,887][704,1016]
+                                        FrameLayout #fhd [612,887][704,1016] clk
+                                        TextView text="4.8万" [628,983][687,1016]
+                                        LinearLayout #cjr [612,1032][704,1152] clk
+                                        TextView text="67" [612,1124][704,1152]
+                                        LinearLayout #fr3 [612,1167][704,1296] clk
+                                        TextView text="2903" [612,1263][704,1296]
+                                        LinearLayout #i6_ [612,1312][704,1441] clk
+                                        TextView text="分享" [612,1408][704,1441]
+                                    FrameLayout #c8j [688,1448][688,1448] hidden
+                                    FrameLayout #i8h [0,1468][720,1508]
+                                      FrameLayout #i0b [0,1468][720,1508]
+                                        FrameLayout #c6 [1,1468][145,1508]
+                                        ImageView #f78 [69,1482][77,1490]
+                                        View #hro [0,1468][720,1508]
+                                    FrameLayout #bottom_relate_series_container [0,1488][720,1488] hidden
+                                    FrameLayout #book_container [0,1488][720,1488] hidden
+                                    View #i05 [0,1488][720,1508]
+                                    FrameLayout #hh [32,1500][688,1588]
+                                        LinearLayout #ap_ [32,1500][600,1588]
+                                        FrameLayout #i7s [32,1500][600,1580] clk
+                                        ViewGroup #root_layout [32,1500][600,1580]
+                                        TextView #kkz text="选集" [64,1521][120,1559]
+                                        TextView #knl text=" · 已完结 · 全72集" [120,1521][374,1559]
+                                        ImageView #b3d [528,1530][568,1550]
+                                        LinearLayout #gd2 [600,1516][688,1572]
+                                        LinearLayout #ej6 [632,1516][688,1572] clk
+                                        FrameLayout #ej4 [632,1516][688,1572]
+                                        ImageView #ej5 [632,1516][688,1572]
+                                  FrameLayout #iay [0,0][720,1488]
+                                  FrameLayout #e1p [0,140][720,1488]
+                                  FrameLayout #cxd [688,288][688,288] hidden
+                                  TextView #i4m [0,565][696,593] hidden
+                                  View #im4 [0,1600][720,1600] hidden
+                                  RelativeLayout #i4q [0,1600][720,1600] hidden
+                                  RelativeLayout #i3a [0,1600][720,1600] hidden
+                                      ViewGroup #i8f [0,2528][720,1600] hidden
+                                    LinearLayout #jsx [272,2586][448,1600] clk hidden
+                                        ImageView #fpu [292,2598][324,1600] hidden
+                                        TextView #cyl text="全屏观看" [332,2598][428,1600] hidden
+                                  ViewGroup #i3b [0,1600][720,1600] hidden
+                                    FrameLayout #dyo [0,1600][720,1600] hidden
+                                    FrameLayout #emo [0,1600][720,1600] hidden
+                                    FrameLayout #cw3 [0,1600][720,1600] hidden
+                                      FrameLayout #cw4 [0,1786][720,1600] hidden
+                                    FrameLayout #de0 [360,2879][360,1600] hidden
+                                    FrameLayout #acm [32,2879][612,1600] hidden
+                                        FrameLayout #i41 [32,2879][612,1600] hidden
+                                        LinearLayout #i42 [32,2879][612,1600] hidden
+                                        LinearLayout #cw0 [32,2879][32,1600] hidden
+                                        FrameLayout #ejz [32,2903][612,1600] hidden
+                                        FrameLayout #i40 [32,2903][612,1600] hidden
+                                        LinearLayout #root_view [32,2903][32,1600] hidden
+                                        FrameLayout #g89 [32,2903][612,1600] hidden
+                                        ViewGroup #kop [32,2903][612,1600] hidden
+                                        TextView #d4 text="太一药神：归凡济世" [32,2903][320,1600] clk hidden
+                                        ImageView #right_icon [328,2909][344,1600] clk hidden
+                                        FrameLayout #hzx [32,2970][612,1600] hidden
+                                        FrameLayout #i8l [32,2970][612,1600] hidden
+                                        ViewGroup #ipx [32,2970][612,1600] hidden
+                                        LinearLayout #m5 [32,2970][612,1600] hidden
+                                        RelativeLayout #h69 [32,2970][612,1600] hidden
+                                        TextView #h68 text="第4集 | 普通青年张凡受尽未婚妻月瑶…" [32,2970][612,1600] clk hidden
+                                        TextView #tv_expand text="展开" [556,2970][612,1600] clk hidden
+                                        FrameLayout #g9s [32,3008][612,1600] hidden
+                                        FrameLayout #i8g [32,3008][612,1600] hidden
+                                        LinearLayout #eju [32,3008][612,1600] hidden
+                                        ViewGroup #i3y [32,3024][612,1600] hidden
+                                        ImageView #eaq [32,3028][56,1600] hidden
+                                        TextView #iz6 text="作者声明：内容由AI生成" [64,3026][326,1600] hidden
+                                    FrameLayout #hkl [612,2434][720,1600] hidden
+                                        ViewGroup #g7h [612,2472][704,1600] hidden
+                                        ViewGroup #i84 [612,2487][704,1600] hidden
+                                        FrameLayout #fhd [612,2487][704,1600] clk hidden
+                                        TextView text="4.8万" [628,2583][687,1600] hidden
+                                        LinearLayout #cjr [612,2632][704,1600] clk hidden
+                                        TextView text="89" [612,2724][704,1600] hidden
+                                        LinearLayout #fr3 [612,2767][704,1600] clk hidden
+                                        TextView text="3466" [612,2863][704,1600] hidden
+                                        LinearLayout #i6_ [612,2912][704,1600] clk hidden
+                                        TextView text="分享" [612,3008][704,1600] hidden
+                                    FrameLayout #c8j [688,3048][688,1600] hidden
+                                    FrameLayout #i8h [0,3068][720,1600] hidden
+                                      FrameLayout #i0b [0,3068][720,1600] hidden
+                                        FrameLayout #c6 [0,3068][109,1600] hidden
+                                        ImageView #f78 [33,3082][41,1600] hidden
+                                        View #hro [0,3068][720,1600] hidden
+                                    FrameLayout #bottom_relate_series_container [0,3088][720,1600] hidden
+                                    FrameLayout #book_container [0,3088][720,1600] hidden
+                                    View #i05 [0,3088][720,1600] hidden
+                                    FrameLayout #hh [32,3100][688,1600] hidden
+                                        LinearLayout #ap_ [32,3100][600,1600] hidden
+                                        FrameLayout #i7s [32,3100][600,1600] clk hidden
+                                        ViewGroup #root_layout [32,3100][600,1600] hidden
+                                        TextView #kkz text="选集" [64,3121][120,1600] hidden
+                                        TextView #knl text=" · 已完结 · 全72集" [120,3121][374,1600] hidden
+                                        ImageView #b3d [528,3130][568,1600] hidden
+                                        LinearLayout #gd2 [600,3116][688,1600] hidden
+                                        LinearLayout #ej6 [632,3116][688,1600] clk hidden
+                                        FrameLayout #ej4 [632,3116][688,1600] hidden
+                                        ImageView #ej5 [632,3116][688,1600] hidden
+                                  FrameLayout #iay [0,1600][720,1600] hidden
+                                  FrameLayout #e1p [0,1740][720,1600] hidden
+                                  FrameLayout #cxd [688,1888][688,1600] hidden
+                          RelativeLayout #g2g [0,0][720,1600]
+                          FrameLayout #fps [0,0][720,1600]
+                          FrameLayout #j3z [0,66][720,154]
+                                View #gog [0,66][720,154]
+                                ImageView #f7q [32,86][80,134] clk
+                                TextView #kfs text="第3集" [88,66][447,154]
+                                LinearLayoutCompat #dio [479,66][632,154]
+                                  FrameLayout #kvn [479,86][600,134] clk
+                                      TextView text="1.25x" [535,91][600,129]
+                                ImageView #f7r [632,86][680,134] clk
+                            FrameLayout #e3q [400,84][640,136]
+                      FrameLayout #ih_ [720,0][720,1600] hidden
+                                  TextView text="太一药神：归凡济世" [972,190][1332,237] hidden
+                                  TextView text="全72集" [972,253][1056,286] hidden
+                                  TextView text="红果热度值2127万" [1076,253][1297,286] hidden
+                                    View desc="收藏" [1142,340][1174,372] hidden
+                                    TextView text="收藏" [1182,340][1238,373] hidden
+                                    TextView text="玄幻" [988,434][1036,462] hidden
+                                    TextView text="逆袭" [1108,434][1156,462] hidden
+                                    TextView text="修真" [1228,434][1276,462] hidden
+                                  TextView text="剧情简介" [752,542][880,580] hidden
+                                    TextView text="普通青年张凡受尽未婚妻月瑶及其家人白眼羞辱，遭雷劈意外获得太一药神传承，身怀医术与修… " [752,609][1408,697] hidden
+                                    TextView text="展开" [1340,653][1396,697] clk hidden
+                                        View desc="avatar image" [752,721][864,833] hidden
+                                        View desc="Subscribed" [778,825][794,841] hidden
+                                        TextView text="关注" [798,821][838,845] hidden
+                                      TextView text="熠星剧场" [752,865][864,898] hidden
+                                      TextView text="出品方" [772,902][844,930] hidden
+                                        TextView #k3j text="剧评" [752,999][720,1042] clk hidden
+                                        FrameLayout #score_card_v2 [752,1074][720,1191] hidden
+                                        ViewGroup #fpe [752,1074][720,1191] clk hidden
+                                        ViewGroup #hsi [752,1074][720,1191] hidden
+                                        TextView #jfz text="未开分" [784,1119][720,1147] hidden
+                                        ViewGroup #hsp [920,1074][720,1191] hidden
+                                        LinearLayout #hsq [920,1098][720,1126] clk hidden
+                                        TextView #k9i text="红果分" [920,1098][720,1126] hidden
+                                        ImageView #f4j [996,1100][720,1124] hidden
+                                        TextView #k9h [920,1134][720,1167] hidden
+                                        View #hsr [1102,1102][720,1163] hidden
+                                        ViewGroup #hk2 [1103,1074][720,1191] clk hidden
+                                        ViewGroup #hlh [1103,1088][720,1177] hidden
+                                        TextView #kdm text="点击或滑动评分" [1172,1088][720,1121] hidden
+                                        View #ilb [1128,1129][720,1177] hidden
+                                        View #kq6 [720,1191][720,1192] hidden
+                                        FrameLayout #gvf [720,1208][720,1208] hidden
+                                        FrameLayout #go_ [720,1208][720,1208] hidden
+                                        RecyclerView #how [720,1208][720,1208] hidden
+                                TextView text="去发布" [1058,1528][1142,1561] hidden
+                                ImageView desc="返回" [752,86][800,134] clk hidden
+                                TextView text="太一药神：归凡济世" [800,89][1232,131] hidden
+                                ImageView desc="分享" [1272,86][1320,134] clk hidden
+                                ImageView desc="更多" [1360,86][1408,134] clk hidden
+                    ImageView #jax [360,800][360,800] hidden
+            View #fj [0,0][1,1] hidden

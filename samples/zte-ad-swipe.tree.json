@@ -1,0 +1,2596 @@
+{
+ "reason": "adb",
+ "time": "20261108-184417",
+ "package": "com.phoenix.read",
+ "activity": "com.dragon.read.component.shortvideo.impl.ShortSeriesActivity",
+ "screen": "720x1600",
+ "tree": {
+  "cls": "#windows",
+  "bounds": "[0,0][0,0]",
+  "visible": false,
+  "children": [
+   {
+    "cls": "FrameLayout",
+    "bounds": "[0,0][720,66]",
+    "children": [
+     {
+      "cls": "FrameLayout",
+      "id": "com.android.systemui:id\/status_bar_container",
+      "bounds": "[0,0][720,66]",
+      "children": [
+       {
+        "cls": "FrameLayout",
+        "id": "com.android.systemui:id\/status_bar",
+        "bounds": "[0,0][720,66]",
+        "children": [
+         {
+          "cls": "LinearLayout",
+          "id": "com.android.systemui:id\/status_bar_contents",
+          "bounds": "[0,0][720,66]",
+          "children": [
+           {
+            "cls": "FrameLayout",
+            "bounds": "[22,0][295,66]",
+            "children": [
+             {
+              "cls": "LinearLayout",
+              "id": "com.android.systemui:id\/status_bar_left_side",
+              "bounds": "[22,0][295,66]",
+              "children": [
+               {
+                "cls": "TextView",
+                "id": "com.android.systemui:id\/clock",
+                "text": "18:44",
+                "desc": "18:44",
+                "bounds": "[22,0][79,66]"
+               },
+               {
+                "cls": "FrameLayout",
+                "id": "com.android.systemui:id\/notification_icon_area",
+                "bounds": "[79,0][295,66]",
+                "children": [
+                 {
+                  "cls": "LinearLayout",
+                  "id": "com.android.systemui:id\/notification_icon_area_inner",
+                  "bounds": "[79,0][295,66]",
+                  "children": [
+                   {
+                    "cls": "FrameLayout",
+                    "id": "com.android.systemui:id\/notificationIcons",
+                    "bounds": "[79,0][295,66]",
+                    "children": [
+                     {
+                      "cls": "ImageView",
+                      "desc": "Android 系统通知：已连接到 USB 调试",
+                      "bounds": "[79,19][107,47]"
+                     },
+                     {
+                      "cls": "ImageView",
+                      "desc": "SkipFlow 短剧续播通知：SkipFlow 运行中",
+                      "bounds": "[107,19][135,47]"
+                     },
+                     {
+                      "cls": "ImageView",
+                      "desc": "设置通知：USB",
+                      "bounds": "[135,19][163,47]"
+                     }
+                    ]
+                   }
+                  ]
+                 }
+                ]
+               }
+              ]
+             }
+            ]
+           },
+           {
+            "cls": "View",
+            "id": "com.android.systemui:id\/cutout_space_view",
+            "bounds": "[295,0][425,45]"
+           },
+           {
+            "cls": "LinearLayout",
+            "id": "com.android.systemui:id\/system_icon_area",
+            "bounds": "[425,0][698,66]",
+            "children": [
+             {
+              "cls": "LinearLayout",
+              "id": "com.android.systemui:id\/system_icons",
+              "bounds": "[425,0][698,66]",
+              "children": [
+               {
+                "cls": "LinearLayout",
+                "id": "com.android.systemui:id\/statusIcons",
+                "bounds": "[425,0][630,66]",
+                "children": [
+                 {
+                  "cls": "ImageView",
+                  "desc": "闹钟",
+                  "bounds": "[464,19][492,47]"
+                 },
+                 {
+                  "cls": "ImageView",
+                  "desc": "振铃器振动。",
+                  "bounds": "[494,19][522,47]"
+                 },
+                 {
+                  "cls": "FrameLayout",
+                  "id": "com.android.systemui:id\/wifi_combo",
+                  "desc": "WLAN 信号满格。",
+                  "bounds": "[524,19][552,47]",
+                  "children": [
+                   {
+                    "cls": "FrameLayout",
+                    "id": "com.android.systemui:id\/wifi_group",
+                    "bounds": "[524,19][552,47]",
+                    "children": [
+                     {
+                      "cls": "ImageView",
+                      "id": "com.android.systemui:id\/wifi_inout",
+                      "bounds": "[524,19][524,19]",
+                      "visible": false
+                     },
+                     {
+                      "cls": "ImageView",
+                      "id": "com.android.systemui:id\/wifi_signal",
+                      "bounds": "[524,19][552,47]"
+                     }
+                    ]
+                   }
+                  ]
+                 },
+                 {
+                  "cls": "ImageView",
+                  "bounds": "[554,19][586,47]"
+                 },
+                 {
+                  "cls": "FrameLayout",
+                  "id": "com.android.systemui:id\/mobile_combo",
+                  "desc": "手机信号满格。",
+                  "bounds": "[588,19][628,47]",
+                  "children": [
+                   {
+                    "cls": "LinearLayout",
+                    "id": "com.android.systemui:id\/mobile_group",
+                    "bounds": "[588,19][628,47]",
+                    "children": [
+                     {
+                      "cls": "FrameLayout",
+                      "id": "com.android.systemui:id\/mobile_signal_group",
+                      "bounds": "[588,19][628,47]",
+                      "children": [
+                       {
+                        "cls": "ImageView",
+                        "id": "com.android.systemui:id\/mobile_signal",
+                        "bounds": "[588,19][628,47]"
+                       },
+                       {
+                        "cls": "ImageView",
+                        "id": "com.android.systemui:id\/mobile_type",
+                        "desc": "5GSA",
+                        "bounds": "[588,19][628,47]"
+                       }
+                      ]
+                     }
+                    ]
+                   }
+                  ]
+                 }
+                ]
+               },
+               {
+                "cls": "RelativeLayout",
+                "id": "com.android.systemui:id\/battery",
+                "desc": "正在充电，已完成 80%。",
+                "bounds": "[630,0][698,66]",
+                "children": [
+                 {
+                  "cls": "FrameLayout",
+                  "id": "com.android.systemui:id\/mfv_battery_container",
+                  "bounds": "[630,0][678,66]",
+                  "children": [
+                   {
+                    "cls": "ImageView",
+                    "id": "com.android.systemui:id\/mfv_battery_meterview",
+                    "desc": "正在充电，已完成 80%。",
+                    "bounds": "[630,19][678,47]"
+                   },
+                   {
+                    "cls": "TextView",
+                    "id": "com.android.systemui:id\/mfv_battery_level_inside",
+                    "text": "80",
+                    "bounds": "[644,19][664,47]"
+                   }
+                  ]
+                 },
+                 {
+                  "cls": "ImageView",
+                  "id": "com.android.systemui:id\/mfv_charge_indicator_outside",
+                  "bounds": "[678,0][698,66]"
+                 }
+                ]
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "cls": "LinearLayout",
+    "id": "com.zte.floatassist:id\/arrow_layout",
+    "bounds": "[692,349][764,505]",
+    "clickable": true,
+    "children": [
+     {
+      "cls": "LinearLayout",
+      "bounds": "[692,349][764,505]",
+      "children": [
+       {
+        "cls": "LinearLayout",
+        "bounds": "[692,349][764,505]",
+        "children": [
+         {
+          "cls": "LinearLayout",
+          "id": "com.zte.floatassist:id\/got_it_btn",
+          "bounds": "[708,363][748,491]",
+          "children": [
+           {
+            "cls": "View",
+            "id": "com.zte.floatassist:id\/got_it_btn_inner",
+            "bounds": "[710,365][746,489]"
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "cls": "FrameLayout",
+    "bounds": "[0,0][720,1600]",
+    "children": [
+     {
+      "cls": "LinearLayout",
+      "bounds": "[0,0][720,1600]",
+      "children": [
+       {
+        "cls": "FrameLayout",
+        "bounds": "[0,0][720,1600]",
+        "children": [
+         {
+          "cls": "LinearLayout",
+          "id": "com.phoenix.read:id\/action_bar_root",
+          "bounds": "[0,0][720,1600]",
+          "children": [
+           {
+            "cls": "FrameLayout",
+            "id": "android:id\/content",
+            "bounds": "[0,0][720,1600]",
+            "children": [
+             {
+              "cls": "ViewGroup",
+              "id": "com.phoenix.read:id\/is_",
+              "bounds": "[0,0][720,1600]",
+              "children": [
+               {
+                "cls": "FrameLayout",
+                "id": "com.phoenix.read:id\/mq",
+                "bounds": "[0,0][720,1600]",
+                "children": [
+                 {
+                  "cls": "FrameLayout",
+                  "id": "com.phoenix.read:id\/ffo",
+                  "bounds": "[0,0][720,1600]",
+                  "children": [
+                   {
+                    "cls": "FrameLayout",
+                    "bounds": "[0,0][720,1600]",
+                    "children": [
+                     {
+                      "cls": "ImageView",
+                      "id": "com.phoenix.read:id\/jaz",
+                      "bounds": "[0,0][0,0]",
+                      "visible": false
+                     },
+                     {
+                      "cls": "FrameLayout",
+                      "id": "com.phoenix.read:id\/jb0",
+                      "bounds": "[0,0][720,1600]"
+                     },
+                     {
+                      "cls": "ViewPager",
+                      "id": "com.phoenix.read:id\/dwx",
+                      "bounds": "[0,0][720,1600]",
+                      "children": [
+                       {
+                        "cls": "FrameLayout",
+                        "id": "com.phoenix.read:id\/jal",
+                        "bounds": "[0,0][720,1600]",
+                        "children": [
+                         {
+                          "cls": "FrameLayout",
+                          "id": "com.phoenix.read:id\/ikc",
+                          "bounds": "[0,0][720,1600]"
+                         },
+                         {
+                          "cls": "ViewGroup",
+                          "id": "com.phoenix.read:id\/root_view",
+                          "bounds": "[0,0][720,1600]",
+                          "children": [
+                           {
+                            "cls": "FrameLayout",
+                            "id": "com.phoenix.read:id\/di2",
+                            "bounds": "[360,0][360,0]",
+                            "visible": false
+                           },
+                           {
+                            "cls": "FrameLayout",
+                            "id": "com.phoenix.read:id\/j8k",
+                            "bounds": "[0,0][720,0]",
+                            "visible": false
+                           },
+                           {
+                            "cls": "FrameLayout",
+                            "id": "com.phoenix.read:id\/hc5",
+                            "bounds": "[0,0][720,1600]",
+                            "children": [
+                             {
+                              "cls": "ViewPager",
+                              "id": "com.phoenix.read:id\/l0",
+                              "bounds": "[0,0][720,1600]",
+                              "children": [
+                               {
+                                "cls": "RecyclerView",
+                                "bounds": "[0,0][720,1600]",
+                                "children": [
+                                 {
+                                  "cls": "FrameLayout",
+                                  "bounds": "[0,0][720,0]",
+                                  "visible": false,
+                                  "children": [
+                                   {
+                                    "cls": "FrameLayout",
+                                    "bounds": "[0,0][720,0]",
+                                    "visible": false,
+                                    "children": [
+                                     {
+                                      "cls": "ViewGroup",
+                                      "bounds": "[0,0][720,0]",
+                                      "visible": false,
+                                      "children": [
+                                       {
+                                        "cls": "FrameLayout",
+                                        "id": "com.phoenix.read:id\/container",
+                                        "bounds": "[0,0][720,0]",
+                                        "visible": false,
+                                        "children": [
+                                         {
+                                          "cls": "FrameLayout",
+                                          "id": "com.phoenix.read:id\/dq4",
+                                          "bounds": "[0,0][720,-112]",
+                                          "visible": false,
+                                          "children": [
+                                           {
+                                            "cls": "FrameLayout",
+                                            "bounds": "[0,0][720,-112]",
+                                            "visible": false,
+                                            "children": [
+                                             {
+                                              "cls": "FrameLayout",
+                                              "bounds": "[0,0][720,-112]",
+                                              "visible": false,
+                                              "children": [
+                                               {
+                                                "cls": "ViewGroup",
+                                                "bounds": "[0,0][720,-112]",
+                                                "visible": false,
+                                                "children": [
+                                                 {
+                                                  "cls": "ViewGroup",
+                                                  "bounds": "[0,0][720,-112]",
+                                                  "visible": false,
+                                                  "children": [
+                                                   {
+                                                    "cls": "ViewGroup",
+                                                    "bounds": "[0,0][720,-112]",
+                                                    "visible": false,
+                                                    "children": [
+                                                     {
+                                                      "cls": "ViewGroup",
+                                                      "bounds": "[0,0][720,-112]",
+                                                      "visible": false,
+                                                      "children": [
+                                                       {
+                                                        "cls": "FrameLayout",
+                                                        "bounds": "[0,0][720,-112]",
+                                                        "visible": false,
+                                                        "children": [
+                                                         {
+                                                          "cls": "FrameLayout",
+                                                          "bounds": "[0,0][720,-112]",
+                                                          "visible": false,
+                                                          "children": [
+                                                           {
+                                                            "cls": "View",
+                                                            "bounds": "[0,0][720,-112]",
+                                                            "visible": false
+                                                           }
+                                                          ]
+                                                         }
+                                                        ]
+                                                       },
+                                                       {
+                                                        "cls": "ViewGroup",
+                                                        "bounds": "[0,0][720,-1184]",
+                                                        "visible": false
+                                                       },
+                                                       {
+                                                        "cls": "ViewGroup",
+                                                        "bounds": "[0,0][720,-112]",
+                                                        "visible": false
+                                                       }
+                                                      ]
+                                                     }
+                                                    ]
+                                                   },
+                                                   {
+                                                    "cls": "ViewGroup",
+                                                    "bounds": "[432,0][688,-1446]",
+                                                    "visible": false,
+                                                    "children": [
+                                                     {
+                                                      "cls": "ViewGroup",
+                                                      "bounds": "[432,0][616,-1458]",
+                                                      "visible": false
+                                                     },
+                                                     {
+                                                      "cls": "ViewGroup",
+                                                      "bounds": "[640,0][688,-1466]",
+                                                      "visible": false,
+                                                      "children": [
+                                                       {
+                                                        "cls": "ImageView",
+                                                        "bounds": "[640,0][688,-1466]",
+                                                        "visible": false
+                                                       }
+                                                      ]
+                                                     }
+                                                    ]
+                                                   },
+                                                   {
+                                                    "cls": "ViewGroup",
+                                                    "bounds": "[720,0][720,-856]",
+                                                    "visible": false
+                                                   },
+                                                   {
+                                                    "cls": "ViewGroup",
+                                                    "bounds": "[0,0][720,-112]",
+                                                    "visible": false,
+                                                    "children": [
+                                                     {
+                                                      "cls": "ViewGroup",
+                                                      "bounds": "[32,0][688,-144]",
+                                                      "visible": false,
+                                                      "children": [
+                                                       {
+                                                        "cls": "ViewGroup",
+                                                        "bounds": "[32,0][688,-144]",
+                                                        "visible": false,
+                                                        "children": [
+                                                         {
+                                                          "cls": "ViewGroup",
+                                                          "bounds": "[32,0][688,-144]",
+                                                          "visible": false,
+                                                          "children": [
+                                                           {
+                                                            "cls": "ViewGroup",
+                                                            "bounds": "[64,0][656,-272]",
+                                                            "visible": false,
+                                                            "children": [
+                                                             {
+                                                              "cls": "ViewGroup",
+                                                              "bounds": "[64,0][208,-272]",
+                                                              "visible": false,
+                                                              "children": [
+                                                               {
+                                                                "cls": "ViewGroup",
+                                                                "bounds": "[64,0][208,-272]",
+                                                                "visible": false
+                                                               }
+                                                              ]
+                                                             },
+                                                             {
+                                                              "cls": "ViewGroup",
+                                                              "bounds": "[232,0][656,-324]",
+                                                              "visible": false,
+                                                              "children": [
+                                                               {
+                                                                "cls": "ViewGroup",
+                                                                "bounds": "[232,0][656,-376]",
+                                                                "visible": false,
+                                                                "children": [
+                                                                 {
+                                                                  "cls": "ViewGroup",
+                                                                  "desc": "钱坤-福哥量价",
+                                                                  "bounds": "[232,0][438,-376]",
+                                                                  "visible": false
+                                                                 },
+                                                                 {
+                                                                  "cls": "ViewGroup",
+                                                                  "bounds": "[232,0][232,-396]",
+                                                                  "visible": false
+                                                                 }
+                                                                ]
+                                                               },
+                                                               {
+                                                                "cls": "ViewGroup",
+                                                                "bounds": "[232,0][656,-324]",
+                                                                "visible": false,
+                                                                "children": [
+                                                                 {
+                                                                  "cls": "ViewGroup",
+                                                                  "desc": "加入我的战队，每天三支不迷路！",
+                                                                  "bounds": "[232,0][656,-324]",
+                                                                  "visible": false
+                                                                 }
+                                                                ]
+                                                               }
+                                                              ]
+                                                             }
+                                                            ]
+                                                           },
+                                                           {
+                                                            "cls": "ViewGroup",
+                                                            "bounds": "[64,0][656,-176]",
+                                                            "visible": false,
+                                                            "children": [
+                                                             {
+                                                              "cls": "ViewGroup",
+                                                              "bounds": "[64,0][656,-176]",
+                                                              "visible": false,
+                                                              "children": [
+                                                               {
+                                                                "cls": "ViewGroup",
+                                                                "bounds": "[64,0][656,-176]",
+                                                                "visible": false,
+                                                                "children": [
+                                                                 {
+                                                                  "cls": "ViewGroup",
+                                                                  "bounds": "[64,0][656,-176]",
+                                                                  "visible": false
+                                                                 },
+                                                                 {
+                                                                  "cls": "ViewGroup",
+                                                                  "bounds": "[64,0][656,-176]",
+                                                                  "visible": false
+                                                                 }
+                                                                ]
+                                                               }
+                                                              ]
+                                                             }
+                                                            ]
+                                                           }
+                                                          ]
+                                                         }
+                                                        ]
+                                                       }
+                                                      ]
+                                                     }
+                                                    ]
+                                                   },
+                                                   {
+                                                    "cls": "ViewGroup",
+                                                    "bounds": "[154,0][566,-528]",
+                                                    "visible": false,
+                                                    "children": [
+                                                     {
+                                                      "cls": "ViewGroup",
+                                                      "bounds": "[204,0][516,-578]",
+                                                      "visible": false
+                                                     },
+                                                     {
+                                                      "cls": "ViewGroup",
+                                                      "bounds": "[214,0][506,-588]",
+                                                      "visible": false
+                                                     }
+                                                    ]
+                                                   }
+                                                  ]
+                                                 }
+                                                ]
+                                               }
+                                              ]
+                                             }
+                                            ]
+                                           }
+                                          ]
+                                         }
+                                        ]
+                                       },
+                                       {
+                                        "cls": "FrameLayout",
+                                        "id": "com.phoenix.read:id\/hi",
+                                        "bounds": "[0,0][720,0]",
+                                        "visible": false,
+                                        "children": [
+                                         {
+                                          "cls": "FrameLayout",
+                                          "bounds": "[0,0][720,0]",
+                                          "visible": false,
+                                          "children": [
+                                           {
+                                            "cls": "View",
+                                            "id": "com.phoenix.read:id\/gap",
+                                            "bounds": "[0,0][0,-112]",
+                                            "visible": false
+                                           },
+                                           {
+                                            "cls": "LinearLayout",
+                                            "id": "com.phoenix.read:id\/apv",
+                                            "bounds": "[0,0][720,-36]",
+                                            "visible": false,
+                                            "children": [
+                                             {
+                                              "cls": "LinearLayout",
+                                              "bounds": "[224,0][496,-36]",
+                                              "visible": false,
+                                              "children": [
+                                               {
+                                                "cls": "ImageView",
+                                                "id": "com.phoenix.read:id\/aq8",
+                                                "bounds": "[224,0][264,-36]",
+                                                "visible": false
+                                               },
+                                               {
+                                                "cls": "TextView",
+                                                "id": "com.phoenix.read:id\/aq9",
+                                                "text": "上滑继续观看短剧",
+                                                "bounds": "[272,0][496,-38]",
+                                                "visible": false
+                                               }
+                                              ]
+                                             }
+                                            ]
+                                           }
+                                          ]
+                                         }
+                                        ]
+                                       }
+                                      ]
+                                     }
+                                    ]
+                                   }
+                                  ]
+                                 },
+                                 {
+                                  "cls": "FrameLayout",
+                                  "bounds": "[0,0][720,1600]",
+                                  "children": [
+                                   {
+                                    "cls": "View",
+                                    "id": "com.phoenix.read:id\/im4",
+                                    "bounds": "[0,0][720,0]",
+                                    "visible": false
+                                   },
+                                   {
+                                    "cls": "RelativeLayout",
+                                    "id": "com.phoenix.read:id\/i4q",
+                                    "bounds": "[0,0][720,1600]"
+                                   },
+                                   {
+                                    "cls": "RelativeLayout",
+                                    "id": "com.phoenix.read:id\/i3a",
+                                    "bounds": "[0,0][720,1600]",
+                                    "children": [
+                                     {
+                                      "cls": "FrameLayout",
+                                      "bounds": "[0,0][720,1488]",
+                                      "children": [
+                                       {
+                                        "cls": "FrameLayout",
+                                        "bounds": "[0,0][720,1488]",
+                                        "children": [
+                                         {
+                                          "cls": "FrameLayout",
+                                          "id": "com.phoenix.read:id\/a0s",
+                                          "bounds": "[0,0][720,1488]"
+                                         },
+                                         {
+                                          "cls": "View",
+                                          "id": "com.phoenix.read:id\/c8x",
+                                          "bounds": "[0,0][720,1178]"
+                                         },
+                                         {
+                                          "cls": "ImageView",
+                                          "id": "com.phoenix.read:id\/b1",
+                                          "bounds": "[296,680][424,808]"
+                                         }
+                                        ]
+                                       }
+                                      ]
+                                     },
+                                     {
+                                      "cls": "FrameLayout",
+                                      "bounds": "[0,928][720,1488]"
+                                     },
+                                     {
+                                      "cls": "LinearLayout",
+                                      "id": "com.phoenix.read:id\/jsx",
+                                      "bounds": "[272,986][448,1043]",
+                                      "clickable": true,
+                                      "children": [
+                                       {
+                                        "cls": "LinearLayout",
+                                        "bounds": "[272,986][448,1043]",
+                                        "children": [
+                                         {
+                                          "cls": "ImageView",
+                                          "id": "com.phoenix.read:id\/fpu",
+                                          "bounds": "[292,998][324,1030]"
+                                         },
+                                         {
+                                          "cls": "TextView",
+                                          "id": "com.phoenix.read:id\/cyl",
+                                          "text": "全屏观看",
+                                          "bounds": "[332,998][428,1031]"
+                                         }
+                                        ]
+                                       }
+                                      ]
+                                     }
+                                    ]
+                                   },
+                                   {
+                                    "cls": "ViewGroup",
+                                    "id": "com.phoenix.read:id\/i3b",
+                                    "bounds": "[0,0][720,1600]",
+                                    "children": [
+                                     {
+                                      "cls": "FrameLayout",
+                                      "id": "com.phoenix.read:id\/dyo",
+                                      "bounds": "[0,0][720,1600]",
+                                      "children": [
+                                       {
+                                        "cls": "FrameLayout",
+                                        "bounds": "[0,0][720,1600]"
+                                       }
+                                      ]
+                                     },
+                                     {
+                                      "cls": "FrameLayout",
+                                      "id": "com.phoenix.read:id\/emo",
+                                      "bounds": "[0,0][720,1488]"
+                                     },
+                                     {
+                                      "cls": "FrameLayout",
+                                      "id": "com.phoenix.read:id\/cw3",
+                                      "bounds": "[0,0][720,186]",
+                                      "children": [
+                                       {
+                                        "cls": "FrameLayout",
+                                        "id": "com.phoenix.read:id\/cw4",
+                                        "bounds": "[0,186][720,186]",
+                                        "visible": false
+                                       }
+                                      ]
+                                     },
+                                     {
+                                      "cls": "FrameLayout",
+                                      "id": "com.phoenix.read:id\/de0",
+                                      "bounds": "[360,1279][360,1279]",
+                                      "visible": false
+                                     },
+                                     {
+                                      "cls": "FrameLayout",
+                                      "id": "com.phoenix.read:id\/acm",
+                                      "bounds": "[32,1279][519,1456]",
+                                      "children": [
+                                       {
+                                        "cls": "FrameLayout",
+                                        "bounds": "[32,1279][519,1456]",
+                                        "children": [
+                                         {
+                                          "cls": "FrameLayout",
+                                          "id": "com.phoenix.read:id\/i41",
+                                          "bounds": "[32,1279][519,1456]",
+                                          "children": [
+                                           {
+                                            "cls": "LinearLayout",
+                                            "id": "com.phoenix.read:id\/i42",
+                                            "bounds": "[32,1279][519,1456]",
+                                            "children": [
+                                             {
+                                              "cls": "LinearLayout",
+                                              "id": "com.phoenix.read:id\/cw0",
+                                              "bounds": "[32,1279][32,1279]",
+                                              "visible": false
+                                             },
+                                             {
+                                              "cls": "FrameLayout",
+                                              "id": "com.phoenix.read:id\/ejz",
+                                              "bounds": "[32,1303][519,1303]",
+                                              "visible": false,
+                                              "children": [
+                                               {
+                                                "cls": "FrameLayout",
+                                                "id": "com.phoenix.read:id\/i40",
+                                                "bounds": "[32,1303][519,1303]",
+                                                "visible": false,
+                                                "children": [
+                                                 {
+                                                  "cls": "LinearLayout",
+                                                  "bounds": "[32,1303][519,1303]",
+                                                  "visible": false,
+                                                  "children": [
+                                                   {
+                                                    "cls": "LinearLayout",
+                                                    "id": "com.phoenix.read:id\/root_view",
+                                                    "bounds": "[32,1303][32,1303]",
+                                                    "visible": false
+                                                   }
+                                                  ]
+                                                 }
+                                                ]
+                                               }
+                                              ]
+                                             },
+                                             {
+                                              "cls": "FrameLayout",
+                                              "id": "com.phoenix.read:id\/g89",
+                                              "bounds": "[32,1303][519,1370]",
+                                              "children": [
+                                               {
+                                                "cls": "ViewGroup",
+                                                "id": "com.phoenix.read:id\/kop",
+                                                "bounds": "[32,1303][519,1362]",
+                                                "children": [
+                                                 {
+                                                  "cls": "TextView",
+                                                  "id": "com.phoenix.read:id\/d4",
+                                                  "text": "太一药神：归凡济世",
+                                                  "bounds": "[32,1303][320,1346]",
+                                                  "clickable": true
+                                                 },
+                                                 {
+                                                  "cls": "ImageView",
+                                                  "id": "com.phoenix.read:id\/right_icon",
+                                                  "bounds": "[328,1309][344,1341]",
+                                                  "clickable": true
+                                                 }
+                                                ]
+                                               }
+                                              ]
+                                             },
+                                             {
+                                              "cls": "FrameLayout",
+                                              "id": "com.phoenix.read:id\/hzx",
+                                              "bounds": "[32,1370][519,1370]",
+                                              "visible": false
+                                             },
+                                             {
+                                              "cls": "FrameLayout",
+                                              "id": "com.phoenix.read:id\/i8l",
+                                              "bounds": "[32,1370][519,1408]",
+                                              "children": [
+                                               {
+                                                "cls": "ViewGroup",
+                                                "id": "com.phoenix.read:id\/ipx",
+                                                "bounds": "[32,1370][519,1408]",
+                                                "children": [
+                                                 {
+                                                  "cls": "LinearLayout",
+                                                  "id": "com.phoenix.read:id\/m5",
+                                                  "bounds": "[32,1370][519,1408]",
+                                                  "children": [
+                                                   {
+                                                    "cls": "RelativeLayout",
+                                                    "id": "com.phoenix.read:id\/h69",
+                                                    "bounds": "[32,1370][519,1408]",
+                                                    "children": [
+                                                     {
+                                                      "cls": "TextView",
+                                                      "id": "com.phoenix.read:id\/h68",
+                                                      "text": "第3集 | 普通青年张凡受尽未婚…",
+                                                      "bounds": "[32,1370][519,1408]",
+                                                      "clickable": true
+                                                     },
+                                                     {
+                                                      "cls": "TextView",
+                                                      "id": "com.phoenix.read:id\/tv_expand",
+                                                      "text": "展开",
+                                                      "bounds": "[463,1370][519,1408]",
+                                                      "clickable": true
+                                                     }
+                                                    ]
+                                                   }
+                                                  ]
+                                                 }
+                                                ]
+                                               }
+                                              ]
+                                             },
+                                             {
+                                              "cls": "FrameLayout",
+                                              "id": "com.phoenix.read:id\/g9s",
+                                              "bounds": "[32,1408][519,1408]",
+                                              "visible": false
+                                             },
+                                             {
+                                              "cls": "FrameLayout",
+                                              "id": "com.phoenix.read:id\/i8g",
+                                              "bounds": "[32,1408][519,1408]",
+                                              "visible": false
+                                             },
+                                             {
+                                              "cls": "LinearLayout",
+                                              "id": "com.phoenix.read:id\/eju",
+                                              "bounds": "[32,1408][519,1456]",
+                                              "children": [
+                                               {
+                                                "cls": "FrameLayout",
+                                                "bounds": "[32,1408][519,1456]",
+                                                "children": [
+                                                 {
+                                                  "cls": "ViewGroup",
+                                                  "id": "com.phoenix.read:id\/i3y",
+                                                  "bounds": "[32,1424][519,1456]",
+                                                  "children": [
+                                                   {
+                                                    "cls": "ImageView",
+                                                    "id": "com.phoenix.read:id\/eaq",
+                                                    "bounds": "[32,1428][56,1452]"
+                                                   },
+                                                   {
+                                                    "cls": "TextView",
+                                                    "id": "com.phoenix.read:id\/iz6",
+                                                    "text": "作者声明：内容由AI生成",
+                                                    "bounds": "[64,1426][326,1454]"
+                                                   }
+                                                  ]
+                                                 }
+                                                ]
+                                               }
+                                              ]
+                                             }
+                                            ]
+                                           }
+                                          ]
+                                         }
+                                        ]
+                                       }
+                                      ]
+                                     },
+                                     {
+                                      "cls": "FrameLayout",
+                                      "id": "com.phoenix.read:id\/hkl",
+                                      "bounds": "[612,834][720,1456]",
+                                      "children": [
+                                       {
+                                        "cls": "FrameLayout",
+                                        "bounds": "[612,834][720,1456]",
+                                        "clickable": true,
+                                        "children": [
+                                         {
+                                          "cls": "ViewGroup",
+                                          "bounds": "[612,834][712,1456]",
+                                          "children": [
+                                           {
+                                            "cls": "ViewGroup",
+                                            "id": "com.phoenix.read:id\/g7h",
+                                            "bounds": "[612,872][704,1456]",
+                                            "children": [
+                                             {
+                                              "cls": "ViewGroup",
+                                              "id": "com.phoenix.read:id\/i84",
+                                              "bounds": "[612,887][704,1016]",
+                                              "children": [
+                                               {
+                                                "cls": "FrameLayout",
+                                                "id": "com.phoenix.read:id\/fhd",
+                                                "bounds": "[612,887][704,1016]",
+                                                "clickable": true,
+                                                "children": [
+                                                 {
+                                                  "cls": "ImageView",
+                                                  "bounds": "[612,887][704,979]"
+                                                 },
+                                                 {
+                                                  "cls": "TextView",
+                                                  "text": "4.8万",
+                                                  "bounds": "[628,983][687,1016]"
+                                                 }
+                                                ]
+                                               }
+                                              ]
+                                             },
+                                             {
+                                              "cls": "LinearLayout",
+                                              "id": "com.phoenix.read:id\/cjr",
+                                              "bounds": "[612,1032][704,1152]",
+                                              "clickable": true,
+                                              "children": [
+                                               {
+                                                "cls": "FrameLayout",
+                                                "bounds": "[612,1032][704,1124]",
+                                                "children": [
+                                                 {
+                                                  "cls": "ImageView",
+                                                  "bounds": "[612,1032][704,1124]"
+                                                 }
+                                                ]
+                                               },
+                                               {
+                                                "cls": "TextView",
+                                                "text": "67",
+                                                "bounds": "[612,1124][704,1152]"
+                                               }
+                                              ]
+                                             },
+                                             {
+                                              "cls": "LinearLayout",
+                                              "id": "com.phoenix.read:id\/fr3",
+                                              "bounds": "[612,1167][704,1296]",
+                                              "clickable": true,
+                                              "children": [
+                                               {
+                                                "cls": "FrameLayout",
+                                                "bounds": "[612,1167][704,1259]",
+                                                "children": [
+                                                 {
+                                                  "cls": "ImageView",
+                                                  "bounds": "[612,1167][704,1259]"
+                                                 }
+                                                ]
+                                               },
+                                               {
+                                                "cls": "TextView",
+                                                "text": "2903",
+                                                "bounds": "[612,1263][704,1296]"
+                                               }
+                                              ]
+                                             },
+                                             {
+                                              "cls": "LinearLayout",
+                                              "id": "com.phoenix.read:id\/i6_",
+                                              "bounds": "[612,1312][704,1441]",
+                                              "clickable": true,
+                                              "children": [
+                                               {
+                                                "cls": "FrameLayout",
+                                                "bounds": "[612,1312][704,1404]",
+                                                "children": [
+                                                 {
+                                                  "cls": "ImageView",
+                                                  "bounds": "[612,1312][704,1404]"
+                                                 }
+                                                ]
+                                               },
+                                               {
+                                                "cls": "TextView",
+                                                "text": "分享",
+                                                "bounds": "[612,1408][704,1441]"
+                                               }
+                                              ]
+                                             }
+                                            ]
+                                           }
+                                          ]
+                                         }
+                                        ]
+                                       }
+                                      ]
+                                     },
+                                     {
+                                      "cls": "FrameLayout",
+                                      "id": "com.phoenix.read:id\/c8j",
+                                      "bounds": "[688,1448][688,1448]",
+                                      "visible": false
+                                     },
+                                     {
+                                      "cls": "FrameLayout",
+                                      "id": "com.phoenix.read:id\/i8h",
+                                      "bounds": "[0,1468][720,1508]",
+                                      "children": [
+                                       {
+                                        "cls": "FrameLayout",
+                                        "id": "com.phoenix.read:id\/i0b",
+                                        "bounds": "[0,1468][720,1508]",
+                                        "children": [
+                                         {
+                                          "cls": "FrameLayout",
+                                          "id": "com.phoenix.read:id\/c6",
+                                          "bounds": "[1,1468][145,1508]",
+                                          "children": [
+                                           {
+                                            "cls": "ImageView",
+                                            "id": "com.phoenix.read:id\/f78",
+                                            "bounds": "[69,1482][77,1490]"
+                                           }
+                                          ]
+                                         },
+                                         {
+                                          "cls": "View",
+                                          "id": "com.phoenix.read:id\/hro",
+                                          "bounds": "[0,1468][720,1508]"
+                                         }
+                                        ]
+                                       }
+                                      ]
+                                     },
+                                     {
+                                      "cls": "FrameLayout",
+                                      "id": "com.phoenix.read:id\/bottom_relate_series_container",
+                                      "bounds": "[0,1488][720,1488]",
+                                      "visible": false
+                                     },
+                                     {
+                                      "cls": "FrameLayout",
+                                      "id": "com.phoenix.read:id\/book_container",
+                                      "bounds": "[0,1488][720,1488]",
+                                      "visible": false,
+                                      "children": [
+                                       {
+                                        "cls": "FrameLayout",
+                                        "bounds": "[0,1488][720,1488]",
+                                        "visible": false,
+                                        "children": [
+                                         {
+                                          "cls": "FrameLayout",
+                                          "bounds": "[0,1488][720,1488]",
+                                          "visible": false
+                                         }
+                                        ]
+                                       }
+                                      ]
+                                     },
+                                     {
+                                      "cls": "View",
+                                      "id": "com.phoenix.read:id\/i05",
+                                      "bounds": "[0,1488][720,1508]"
+                                     },
+                                     {
+                                      "cls": "FrameLayout",
+                                      "id": "com.phoenix.read:id\/hh",
+                                      "bounds": "[32,1500][688,1588]",
+                                      "children": [
+                                       {
+                                        "cls": "ViewGroup",
+                                        "bounds": "[32,1500][688,1588]",
+                                        "children": [
+                                         {
+                                          "cls": "LinearLayout",
+                                          "id": "com.phoenix.read:id\/ap_",
+                                          "bounds": "[32,1500][600,1588]",
+                                          "children": [
+                                           {
+                                            "cls": "FrameLayout",
+                                            "id": "com.phoenix.read:id\/i7s",
+                                            "bounds": "[32,1500][600,1580]",
+                                            "clickable": true,
+                                            "children": [
+                                             {
+                                              "cls": "ViewGroup",
+                                              "id": "com.phoenix.read:id\/root_layout",
+                                              "bounds": "[32,1500][600,1580]",
+                                              "children": [
+                                               {
+                                                "cls": "TableLayout",
+                                                "bounds": "[64,1521][504,1559]",
+                                                "children": [
+                                                 {
+                                                  "cls": "TableRow",
+                                                  "bounds": "[64,1521][504,1559]",
+                                                  "children": [
+                                                   {
+                                                    "cls": "TextView",
+                                                    "id": "com.phoenix.read:id\/kkz",
+                                                    "text": "选集",
+                                                    "bounds": "[64,1521][120,1559]"
+                                                   },
+                                                   {
+                                                    "cls": "TextView",
+                                                    "id": "com.phoenix.read:id\/knl",
+                                                    "text": " · 已完结 · 全72集",
+                                                    "bounds": "[120,1521][374,1559]"
+                                                   }
+                                                  ]
+                                                 }
+                                                ]
+                                               },
+                                               {
+                                                "cls": "ImageView",
+                                                "id": "com.phoenix.read:id\/b3d",
+                                                "bounds": "[528,1530][568,1550]"
+                                               }
+                                              ]
+                                             }
+                                            ]
+                                           }
+                                          ]
+                                         },
+                                         {
+                                          "cls": "LinearLayout",
+                                          "id": "com.phoenix.read:id\/gd2",
+                                          "bounds": "[600,1516][688,1572]",
+                                          "children": [
+                                           {
+                                            "cls": "LinearLayout",
+                                            "id": "com.phoenix.read:id\/ej6",
+                                            "bounds": "[632,1516][688,1572]",
+                                            "clickable": true,
+                                            "children": [
+                                             {
+                                              "cls": "FrameLayout",
+                                              "id": "com.phoenix.read:id\/ej4",
+                                              "bounds": "[632,1516][688,1572]",
+                                              "children": [
+                                               {
+                                                "cls": "ImageView",
+                                                "id": "com.phoenix.read:id\/ej5",
+                                                "bounds": "[632,1516][688,1572]"
+                                               }
+                                              ]
+                                             }
+                                            ]
+                                           }
+                                          ]
+                                         }
+                                        ]
+                                       }
+                                      ]
+                                     }
+                                    ]
+                                   },
+                                   {
+                                    "cls": "FrameLayout",
+                                    "id": "com.phoenix.read:id\/iay",
+                                    "bounds": "[0,0][720,1488]",
+                                    "children": [
+                                     {
+                                      "cls": "View",
+                                      "bounds": "[0,541][720,946]"
+                                     }
+                                    ]
+                                   },
+                                   {
+                                    "cls": "FrameLayout",
+                                    "id": "com.phoenix.read:id\/e1p",
+                                    "bounds": "[0,140][720,1488]"
+                                   },
+                                   {
+                                    "cls": "FrameLayout",
+                                    "id": "com.phoenix.read:id\/cxd",
+                                    "bounds": "[688,288][688,288]",
+                                    "visible": false
+                                   },
+                                   {
+                                    "cls": "TextView",
+                                    "id": "com.phoenix.read:id\/i4m",
+                                    "bounds": "[0,565][696,593]",
+                                    "visible": false
+                                   }
+                                  ]
+                                 },
+                                 {
+                                  "cls": "FrameLayout",
+                                  "bounds": "[0,1600][720,1600]",
+                                  "visible": false,
+                                  "children": [
+                                   {
+                                    "cls": "View",
+                                    "id": "com.phoenix.read:id\/im4",
+                                    "bounds": "[0,1600][720,1600]",
+                                    "visible": false
+                                   },
+                                   {
+                                    "cls": "RelativeLayout",
+                                    "id": "com.phoenix.read:id\/i4q",
+                                    "bounds": "[0,1600][720,1600]",
+                                    "visible": false
+                                   },
+                                   {
+                                    "cls": "RelativeLayout",
+                                    "id": "com.phoenix.read:id\/i3a",
+                                    "bounds": "[0,1600][720,1600]",
+                                    "visible": false,
+                                    "children": [
+                                     {
+                                      "cls": "FrameLayout",
+                                      "bounds": "[0,2528][720,1600]",
+                                      "visible": false,
+                                      "children": [
+                                       {
+                                        "cls": "ViewGroup",
+                                        "id": "com.phoenix.read:id\/i8f",
+                                        "bounds": "[0,2528][720,1600]",
+                                        "visible": false
+                                       }
+                                      ]
+                                     },
+                                     {
+                                      "cls": "LinearLayout",
+                                      "id": "com.phoenix.read:id\/jsx",
+                                      "bounds": "[272,2586][448,1600]",
+                                      "clickable": true,
+                                      "visible": false,
+                                      "children": [
+                                       {
+                                        "cls": "LinearLayout",
+                                        "bounds": "[272,2586][448,1600]",
+                                        "visible": false,
+                                        "children": [
+                                         {
+                                          "cls": "ImageView",
+                                          "id": "com.phoenix.read:id\/fpu",
+                                          "bounds": "[292,2598][324,1600]",
+                                          "visible": false
+                                         },
+                                         {
+                                          "cls": "TextView",
+                                          "id": "com.phoenix.read:id\/cyl",
+                                          "text": "全屏观看",
+                                          "bounds": "[332,2598][428,1600]",
+                                          "visible": false
+                                         }
+                                        ]
+                                       }
+                                      ]
+                                     }
+                                    ]
+                                   },
+                                   {
+                                    "cls": "ViewGroup",
+                                    "id": "com.phoenix.read:id\/i3b",
+                                    "bounds": "[0,1600][720,1600]",
+                                    "visible": false,
+                                    "children": [
+                                     {
+                                      "cls": "FrameLayout",
+                                      "id": "com.phoenix.read:id\/dyo",
+                                      "bounds": "[0,1600][720,1600]",
+                                      "visible": false,
+                                      "children": [
+                                       {
+                                        "cls": "FrameLayout",
+                                        "bounds": "[0,1600][720,1600]",
+                                        "visible": false
+                                       }
+                                      ]
+                                     },
+                                     {
+                                      "cls": "FrameLayout",
+                                      "id": "com.phoenix.read:id\/emo",
+                                      "bounds": "[0,1600][720,1600]",
+                                      "visible": false
+                                     },
+                                     {
+                                      "cls": "FrameLayout",
+                                      "id": "com.phoenix.read:id\/cw3",
+                                      "bounds": "[0,1600][720,1600]",
+                                      "visible": false,
+                                      "children": [
+                                       {
+                                        "cls": "FrameLayout",
+                                        "id": "com.phoenix.read:id\/cw4",
+                                        "bounds": "[0,1786][720,1600]",
+                                        "visible": false
+                                       }
+                                      ]
+                                     },
+                                     {
+                                      "cls": "FrameLayout",
+                                      "id": "com.phoenix.read:id\/de0",
+                                      "bounds": "[360,2879][360,1600]",
+                                      "visible": false
+                                     },
+                                     {
+                                      "cls": "FrameLayout",
+                                      "id": "com.phoenix.read:id\/acm",
+                                      "bounds": "[32,2879][612,1600]",
+                                      "visible": false,
+                                      "children": [
+                                       {
+                                        "cls": "FrameLayout",
+                                        "bounds": "[32,2879][612,1600]",
+                                        "visible": false,
+                                        "children": [
+                                         {
+                                          "cls": "FrameLayout",
+                                          "id": "com.phoenix.read:id\/i41",
+                                          "bounds": "[32,2879][612,1600]",
+                                          "visible": false,
+                                          "children": [
+                                           {
+                                            "cls": "LinearLayout",
+                                            "id": "com.phoenix.read:id\/i42",
+                                            "bounds": "[32,2879][612,1600]",
+                                            "visible": false,
+                                            "children": [
+                                             {
+                                              "cls": "LinearLayout",
+                                              "id": "com.phoenix.read:id\/cw0",
+                                              "bounds": "[32,2879][32,1600]",
+                                              "visible": false
+                                             },
+                                             {
+                                              "cls": "FrameLayout",
+                                              "id": "com.phoenix.read:id\/ejz",
+                                              "bounds": "[32,2903][612,1600]",
+                                              "visible": false,
+                                              "children": [
+                                               {
+                                                "cls": "FrameLayout",
+                                                "id": "com.phoenix.read:id\/i40",
+                                                "bounds": "[32,2903][612,1600]",
+                                                "visible": false,
+                                                "children": [
+                                                 {
+                                                  "cls": "LinearLayout",
+                                                  "bounds": "[32,2903][612,1600]",
+                                                  "visible": false,
+                                                  "children": [
+                                                   {
+                                                    "cls": "LinearLayout",
+                                                    "id": "com.phoenix.read:id\/root_view",
+                                                    "bounds": "[32,2903][32,1600]",
+                                                    "visible": false
+                                                   }
+                                                  ]
+                                                 }
+                                                ]
+                                               }
+                                              ]
+                                             },
+                                             {
+                                              "cls": "FrameLayout",
+                                              "id": "com.phoenix.read:id\/g89",
+                                              "bounds": "[32,2903][612,1600]",
+                                              "visible": false,
+                                              "children": [
+                                               {
+                                                "cls": "ViewGroup",
+                                                "id": "com.phoenix.read:id\/kop",
+                                                "bounds": "[32,2903][612,1600]",
+                                                "visible": false,
+                                                "children": [
+                                                 {
+                                                  "cls": "TextView",
+                                                  "id": "com.phoenix.read:id\/d4",
+                                                  "text": "太一药神：归凡济世",
+                                                  "bounds": "[32,2903][320,1600]",
+                                                  "clickable": true,
+                                                  "visible": false
+                                                 },
+                                                 {
+                                                  "cls": "ImageView",
+                                                  "id": "com.phoenix.read:id\/right_icon",
+                                                  "bounds": "[328,2909][344,1600]",
+                                                  "clickable": true,
+                                                  "visible": false
+                                                 }
+                                                ]
+                                               }
+                                              ]
+                                             },
+                                             {
+                                              "cls": "FrameLayout",
+                                              "id": "com.phoenix.read:id\/hzx",
+                                              "bounds": "[32,2970][612,1600]",
+                                              "visible": false
+                                             },
+                                             {
+                                              "cls": "FrameLayout",
+                                              "id": "com.phoenix.read:id\/i8l",
+                                              "bounds": "[32,2970][612,1600]",
+                                              "visible": false,
+                                              "children": [
+                                               {
+                                                "cls": "ViewGroup",
+                                                "id": "com.phoenix.read:id\/ipx",
+                                                "bounds": "[32,2970][612,1600]",
+                                                "visible": false,
+                                                "children": [
+                                                 {
+                                                  "cls": "LinearLayout",
+                                                  "id": "com.phoenix.read:id\/m5",
+                                                  "bounds": "[32,2970][612,1600]",
+                                                  "visible": false,
+                                                  "children": [
+                                                   {
+                                                    "cls": "RelativeLayout",
+                                                    "id": "com.phoenix.read:id\/h69",
+                                                    "bounds": "[32,2970][612,1600]",
+                                                    "visible": false,
+                                                    "children": [
+                                                     {
+                                                      "cls": "TextView",
+                                                      "id": "com.phoenix.read:id\/h68",
+                                                      "text": "第4集 | 普通青年张凡受尽未婚妻月瑶…",
+                                                      "bounds": "[32,2970][612,1600]",
+                                                      "clickable": true,
+                                                      "visible": false
+                                                     },
+                                                     {
+                                                      "cls": "TextView",
+                                                      "id": "com.phoenix.read:id\/tv_expand",
+                                                      "text": "展开",
+                                                      "bounds": "[556,2970][612,1600]",
+                                                      "clickable": true,
+                                                      "visible": false
+                                                     }
+                                                    ]
+                                                   }
+                                                  ]
+                                                 }
+                                                ]
+                                               }
+                                              ]
+                                             },
+                                             {
+                                              "cls": "FrameLayout",
+                                              "id": "com.phoenix.read:id\/g9s",
+                                              "bounds": "[32,3008][612,1600]",
+                                              "visible": false
+                                             },
+                                             {
+                                              "cls": "FrameLayout",
+                                              "id": "com.phoenix.read:id\/i8g",
+                                              "bounds": "[32,3008][612,1600]",
+                                              "visible": false
+                                             },
+                                             {
+                                              "cls": "LinearLayout",
+                                              "id": "com.phoenix.read:id\/eju",
+                                              "bounds": "[32,3008][612,1600]",
+                                              "visible": false,
+                                              "children": [
+                                               {
+                                                "cls": "FrameLayout",
+                                                "bounds": "[32,3008][612,1600]",
+                                                "visible": false,
+                                                "children": [
+                                                 {
+                                                  "cls": "ViewGroup",
+                                                  "id": "com.phoenix.read:id\/i3y",
+                                                  "bounds": "[32,3024][612,1600]",
+                                                  "visible": false,
+                                                  "children": [
+                                                   {
+                                                    "cls": "ImageView",
+                                                    "id": "com.phoenix.read:id\/eaq",
+                                                    "bounds": "[32,3028][56,1600]",
+                                                    "visible": false
+                                                   },
+                                                   {
+                                                    "cls": "TextView",
+                                                    "id": "com.phoenix.read:id\/iz6",
+                                                    "text": "作者声明：内容由AI生成",
+                                                    "bounds": "[64,3026][326,1600]",
+                                                    "visible": false
+                                                   }
+                                                  ]
+                                                 }
+                                                ]
+                                               }
+                                              ]
+                                             }
+                                            ]
+                                           }
+                                          ]
+                                         }
+                                        ]
+                                       }
+                                      ]
+                                     },
+                                     {
+                                      "cls": "FrameLayout",
+                                      "id": "com.phoenix.read:id\/hkl",
+                                      "bounds": "[612,2434][720,1600]",
+                                      "visible": false,
+                                      "children": [
+                                       {
+                                        "cls": "FrameLayout",
+                                        "bounds": "[612,2434][720,1600]",
+                                        "clickable": true,
+                                        "visible": false,
+                                        "children": [
+                                         {
+                                          "cls": "ViewGroup",
+                                          "bounds": "[612,2434][712,1600]",
+                                          "visible": false,
+                                          "children": [
+                                           {
+                                            "cls": "ViewGroup",
+                                            "id": "com.phoenix.read:id\/g7h",
+                                            "bounds": "[612,2472][704,1600]",
+                                            "visible": false,
+                                            "children": [
+                                             {
+                                              "cls": "ViewGroup",
+                                              "id": "com.phoenix.read:id\/i84",
+                                              "bounds": "[612,2487][704,1600]",
+                                              "visible": false,
+                                              "children": [
+                                               {
+                                                "cls": "FrameLayout",
+                                                "id": "com.phoenix.read:id\/fhd",
+                                                "bounds": "[612,2487][704,1600]",
+                                                "clickable": true,
+                                                "visible": false,
+                                                "children": [
+                                                 {
+                                                  "cls": "ImageView",
+                                                  "bounds": "[612,2487][704,1600]",
+                                                  "visible": false
+                                                 },
+                                                 {
+                                                  "cls": "TextView",
+                                                  "text": "4.8万",
+                                                  "bounds": "[628,2583][687,1600]",
+                                                  "visible": false
+                                                 }
+                                                ]
+                                               }
+                                              ]
+                                             },
+                                             {
+                                              "cls": "LinearLayout",
+                                              "id": "com.phoenix.read:id\/cjr",
+                                              "bounds": "[612,2632][704,1600]",
+                                              "clickable": true,
+                                              "visible": false,
+                                              "children": [
+                                               {
+                                                "cls": "FrameLayout",
+                                                "bounds": "[612,2632][704,1600]",
+                                                "visible": false,
+                                                "children": [
+                                                 {
+                                                  "cls": "ImageView",
+                                                  "bounds": "[612,2632][704,1600]",
+                                                  "visible": false
+                                                 }
+                                                ]
+                                               },
+                                               {
+                                                "cls": "TextView",
+                                                "text": "89",
+                                                "bounds": "[612,2724][704,1600]",
+                                                "visible": false
+                                               }
+                                              ]
+                                             },
+                                             {
+                                              "cls": "LinearLayout",
+                                              "id": "com.phoenix.read:id\/fr3",
+                                              "bounds": "[612,2767][704,1600]",
+                                              "clickable": true,
+                                              "visible": false,
+                                              "children": [
+                                               {
+                                                "cls": "FrameLayout",
+                                                "bounds": "[612,2767][704,1600]",
+                                                "visible": false,
+                                                "children": [
+                                                 {
+                                                  "cls": "ImageView",
+                                                  "bounds": "[612,2767][704,1600]",
+                                                  "visible": false
+                                                 }
+                                                ]
+                                               },
+                                               {
+                                                "cls": "TextView",
+                                                "text": "3466",
+                                                "bounds": "[612,2863][704,1600]",
+                                                "visible": false
+                                               }
+                                              ]
+                                             },
+                                             {
+                                              "cls": "LinearLayout",
+                                              "id": "com.phoenix.read:id\/i6_",
+                                              "bounds": "[612,2912][704,1600]",
+                                              "clickable": true,
+                                              "visible": false,
+                                              "children": [
+                                               {
+                                                "cls": "FrameLayout",
+                                                "bounds": "[612,2912][704,1600]",
+                                                "visible": false,
+                                                "children": [
+                                                 {
+                                                  "cls": "ImageView",
+                                                  "bounds": "[612,2912][704,1600]",
+                                                  "visible": false
+                                                 }
+                                                ]
+                                               },
+                                               {
+                                                "cls": "TextView",
+                                                "text": "分享",
+                                                "bounds": "[612,3008][704,1600]",
+                                                "visible": false
+                                               }
+                                              ]
+                                             }
+                                            ]
+                                           }
+                                          ]
+                                         }
+                                        ]
+                                       }
+                                      ]
+                                     },
+                                     {
+                                      "cls": "FrameLayout",
+                                      "id": "com.phoenix.read:id\/c8j",
+                                      "bounds": "[688,3048][688,1600]",
+                                      "visible": false
+                                     },
+                                     {
+                                      "cls": "FrameLayout",
+                                      "id": "com.phoenix.read:id\/i8h",
+                                      "bounds": "[0,3068][720,1600]",
+                                      "visible": false,
+                                      "children": [
+                                       {
+                                        "cls": "FrameLayout",
+                                        "id": "com.phoenix.read:id\/i0b",
+                                        "bounds": "[0,3068][720,1600]",
+                                        "visible": false,
+                                        "children": [
+                                         {
+                                          "cls": "FrameLayout",
+                                          "id": "com.phoenix.read:id\/c6",
+                                          "bounds": "[0,3068][109,1600]",
+                                          "visible": false,
+                                          "children": [
+                                           {
+                                            "cls": "ImageView",
+                                            "id": "com.phoenix.read:id\/f78",
+                                            "bounds": "[33,3082][41,1600]",
+                                            "visible": false
+                                           }
+                                          ]
+                                         },
+                                         {
+                                          "cls": "View",
+                                          "id": "com.phoenix.read:id\/hro",
+                                          "bounds": "[0,3068][720,1600]",
+                                          "visible": false
+                                         }
+                                        ]
+                                       }
+                                      ]
+                                     },
+                                     {
+                                      "cls": "FrameLayout",
+                                      "id": "com.phoenix.read:id\/bottom_relate_series_container",
+                                      "bounds": "[0,3088][720,1600]",
+                                      "visible": false
+                                     },
+                                     {
+                                      "cls": "FrameLayout",
+                                      "id": "com.phoenix.read:id\/book_container",
+                                      "bounds": "[0,3088][720,1600]",
+                                      "visible": false,
+                                      "children": [
+                                       {
+                                        "cls": "FrameLayout",
+                                        "bounds": "[0,3088][720,1600]",
+                                        "visible": false,
+                                        "children": [
+                                         {
+                                          "cls": "FrameLayout",
+                                          "bounds": "[0,3088][720,1600]",
+                                          "visible": false
+                                         }
+                                        ]
+                                       }
+                                      ]
+                                     },
+                                     {
+                                      "cls": "View",
+                                      "id": "com.phoenix.read:id\/i05",
+                                      "bounds": "[0,3088][720,1600]",
+                                      "visible": false
+                                     },
+                                     {
+                                      "cls": "FrameLayout",
+                                      "id": "com.phoenix.read:id\/hh",
+                                      "bounds": "[32,3100][688,1600]",
+                                      "visible": false,
+                                      "children": [
+                                       {
+                                        "cls": "ViewGroup",
+                                        "bounds": "[32,3100][688,1600]",
+                                        "visible": false,
+                                        "children": [
+                                         {
+                                          "cls": "LinearLayout",
+                                          "id": "com.phoenix.read:id\/ap_",
+                                          "bounds": "[32,3100][600,1600]",
+                                          "visible": false,
+                                          "children": [
+                                           {
+                                            "cls": "FrameLayout",
+                                            "id": "com.phoenix.read:id\/i7s",
+                                            "bounds": "[32,3100][600,1600]",
+                                            "clickable": true,
+                                            "visible": false,
+                                            "children": [
+                                             {
+                                              "cls": "ViewGroup",
+                                              "id": "com.phoenix.read:id\/root_layout",
+                                              "bounds": "[32,3100][600,1600]",
+                                              "visible": false,
+                                              "children": [
+                                               {
+                                                "cls": "TableLayout",
+                                                "bounds": "[64,3121][504,1600]",
+                                                "visible": false,
+                                                "children": [
+                                                 {
+                                                  "cls": "TableRow",
+                                                  "bounds": "[64,3121][504,1600]",
+                                                  "visible": false,
+                                                  "children": [
+                                                   {
+                                                    "cls": "TextView",
+                                                    "id": "com.phoenix.read:id\/kkz",
+                                                    "text": "选集",
+                                                    "bounds": "[64,3121][120,1600]",
+                                                    "visible": false
+                                                   },
+                                                   {
+                                                    "cls": "TextView",
+                                                    "id": "com.phoenix.read:id\/knl",
+                                                    "text": " · 已完结 · 全72集",
+                                                    "bounds": "[120,3121][374,1600]",
+                                                    "visible": false
+                                                   }
+                                                  ]
+                                                 }
+                                                ]
+                                               },
+                                               {
+                                                "cls": "ImageView",
+                                                "id": "com.phoenix.read:id\/b3d",
+                                                "bounds": "[528,3130][568,1600]",
+                                                "visible": false
+                                               }
+                                              ]
+                                             }
+                                            ]
+                                           }
+                                          ]
+                                         },
+                                         {
+                                          "cls": "LinearLayout",
+                                          "id": "com.phoenix.read:id\/gd2",
+                                          "bounds": "[600,3116][688,1600]",
+                                          "visible": false,
+                                          "children": [
+                                           {
+                                            "cls": "LinearLayout",
+                                            "id": "com.phoenix.read:id\/ej6",
+                                            "bounds": "[632,3116][688,1600]",
+                                            "clickable": true,
+                                            "visible": false,
+                                            "children": [
+                                             {
+                                              "cls": "FrameLayout",
+                                              "id": "com.phoenix.read:id\/ej4",
+                                              "bounds": "[632,3116][688,1600]",
+                                              "visible": false,
+                                              "children": [
+                                               {
+                                                "cls": "ImageView",
+                                                "id": "com.phoenix.read:id\/ej5",
+                                                "bounds": "[632,3116][688,1600]",
+                                                "visible": false
+                                               }
+                                              ]
+                                             }
+                                            ]
+                                           }
+                                          ]
+                                         }
+                                        ]
+                                       }
+                                      ]
+                                     }
+                                    ]
+                                   },
+                                   {
+                                    "cls": "FrameLayout",
+                                    "id": "com.phoenix.read:id\/iay",
+                                    "bounds": "[0,1600][720,1600]",
+                                    "visible": false,
+                                    "children": [
+                                     {
+                                      "cls": "View",
+                                      "bounds": "[0,2141][720,1600]",
+                                      "visible": false
+                                     }
+                                    ]
+                                   },
+                                   {
+                                    "cls": "FrameLayout",
+                                    "id": "com.phoenix.read:id\/e1p",
+                                    "bounds": "[0,1740][720,1600]",
+                                    "visible": false
+                                   },
+                                   {
+                                    "cls": "FrameLayout",
+                                    "id": "com.phoenix.read:id\/cxd",
+                                    "bounds": "[688,1888][688,1600]",
+                                    "visible": false
+                                   }
+                                  ]
+                                 }
+                                ]
+                               }
+                              ]
+                             }
+                            ]
+                           },
+                           {
+                            "cls": "RelativeLayout",
+                            "id": "com.phoenix.read:id\/g2g",
+                            "bounds": "[0,0][720,1600]"
+                           },
+                           {
+                            "cls": "FrameLayout",
+                            "id": "com.phoenix.read:id\/fps",
+                            "bounds": "[0,0][720,1600]"
+                           },
+                           {
+                            "cls": "FrameLayout",
+                            "id": "com.phoenix.read:id\/j3z",
+                            "bounds": "[0,66][720,154]",
+                            "children": [
+                             {
+                              "cls": "ViewGroup",
+                              "bounds": "[0,66][720,154]",
+                              "children": [
+                               {
+                                "cls": "ViewGroup",
+                                "bounds": "[0,66][720,154]",
+                                "children": [
+                                 {
+                                  "cls": "View",
+                                  "id": "com.phoenix.read:id\/gog",
+                                  "bounds": "[0,66][720,154]"
+                                 },
+                                 {
+                                  "cls": "ImageView",
+                                  "id": "com.phoenix.read:id\/f7q",
+                                  "bounds": "[32,86][80,134]",
+                                  "clickable": true
+                                 },
+                                 {
+                                  "cls": "TextView",
+                                  "id": "com.phoenix.read:id\/kfs",
+                                  "text": "第3集",
+                                  "bounds": "[88,66][447,154]"
+                                 },
+                                 {
+                                  "cls": "LinearLayoutCompat",
+                                  "id": "com.phoenix.read:id\/dio",
+                                  "bounds": "[479,66][632,154]",
+                                  "children": [
+                                   {
+                                    "cls": "FrameLayout",
+                                    "id": "com.phoenix.read:id\/kvn",
+                                    "bounds": "[479,86][600,134]",
+                                    "clickable": true,
+                                    "children": [
+                                     {
+                                      "cls": "LinearLayout",
+                                      "bounds": "[479,86][600,134]",
+                                      "children": [
+                                       {
+                                        "cls": "ImageView",
+                                        "bounds": "[479,86][527,134]"
+                                       },
+                                       {
+                                        "cls": "TextView",
+                                        "text": "1.25x",
+                                        "bounds": "[535,91][600,129]"
+                                       }
+                                      ]
+                                     }
+                                    ]
+                                   }
+                                  ]
+                                 },
+                                 {
+                                  "cls": "ImageView",
+                                  "id": "com.phoenix.read:id\/f7r",
+                                  "bounds": "[632,86][680,134]",
+                                  "clickable": true
+                                 }
+                                ]
+                               }
+                              ]
+                             },
+                             {
+                              "cls": "FrameLayout",
+                              "id": "com.phoenix.read:id\/e3q",
+                              "bounds": "[400,84][640,136]"
+                             }
+                            ]
+                           }
+                          ]
+                         }
+                        ]
+                       },
+                       {
+                        "cls": "FrameLayout",
+                        "id": "com.phoenix.read:id\/ih_",
+                        "bounds": "[720,0][720,1600]",
+                        "visible": false,
+                        "children": [
+                         {
+                          "cls": "FrameLayout",
+                          "bounds": "[720,0][720,1600]",
+                          "visible": false,
+                          "children": [
+                           {
+                            "cls": "ComposeView",
+                            "bounds": "[720,0][720,1600]",
+                            "visible": false,
+                            "children": [
+                             {
+                              "cls": "View",
+                              "bounds": "[720,0][1440,1600]",
+                              "visible": false,
+                              "children": [
+                               {
+                                "cls": "View",
+                                "bounds": "[720,0][1440,1600]",
+                                "visible": false,
+                                "children": [
+                                 {
+                                  "cls": "View",
+                                  "bounds": "[720,0][1440,800]",
+                                  "visible": false
+                                 }
+                                ]
+                               },
+                               {
+                                "cls": "View",
+                                "bounds": "[720,0][1440,1600]",
+                                "visible": false,
+                                "children": [
+                                 {
+                                  "cls": "View",
+                                  "bounds": "[720,0][1440,1600]",
+                                  "visible": false
+                                 }
+                                ]
+                               },
+                               {
+                                "cls": "View",
+                                "bounds": "[720,154][1440,1600]",
+                                "visible": false,
+                                "children": [
+                                 {
+                                  "cls": "View",
+                                  "bounds": "[744,154][1416,1600]",
+                                  "visible": false,
+                                  "children": [
+                                   {
+                                    "cls": "View",
+                                    "bounds": "[752,190][948,470]",
+                                    "clickable": true,
+                                    "visible": false,
+                                    "children": [
+                                     {
+                                      "cls": "View",
+                                      "bounds": "[752,190][948,470]",
+                                      "visible": false,
+                                      "children": [
+                                       {
+                                        "cls": "View",
+                                        "bounds": "[752,190][948,470]",
+                                        "visible": false
+                                       }
+                                      ]
+                                     },
+                                     {
+                                      "cls": "View",
+                                      "bounds": "[892,410][940,458]",
+                                      "visible": false
+                                     }
+                                    ]
+                                   },
+                                   {
+                                    "cls": "TextView",
+                                    "text": "太一药神：归凡济世",
+                                    "bounds": "[972,190][1332,237]",
+                                    "visible": false
+                                   },
+                                   {
+                                    "cls": "TextView",
+                                    "text": "全72集",
+                                    "bounds": "[972,253][1056,286]",
+                                    "visible": false
+                                   },
+                                   {
+                                    "cls": "View",
+                                    "bounds": "[1064,267][1068,271]",
+                                    "visible": false
+                                   },
+                                   {
+                                    "cls": "TextView",
+                                    "text": "红果热度值2127万",
+                                    "bounds": "[1076,253][1297,286]",
+                                    "visible": false
+                                   },
+                                   {
+                                    "cls": "View",
+                                    "bounds": "[972,320][1408,392]",
+                                    "clickable": true,
+                                    "visible": false,
+                                    "children": [
+                                     {
+                                      "cls": "View",
+                                      "desc": "收藏",
+                                      "bounds": "[1142,340][1174,372]",
+                                      "visible": false
+                                     },
+                                     {
+                                      "cls": "TextView",
+                                      "text": "收藏",
+                                      "bounds": "[1182,340][1238,373]",
+                                      "visible": false
+                                     }
+                                    ]
+                                   },
+                                   {
+                                    "cls": "View",
+                                    "bounds": "[988,434][1064,462]",
+                                    "clickable": true,
+                                    "visible": false,
+                                    "children": [
+                                     {
+                                      "cls": "TextView",
+                                      "text": "玄幻",
+                                      "bounds": "[988,434][1036,462]",
+                                      "visible": false
+                                     },
+                                     {
+                                      "cls": "View",
+                                      "bounds": "[1040,436][1064,460]",
+                                      "visible": false
+                                     }
+                                    ]
+                                   },
+                                   {
+                                    "cls": "View",
+                                    "bounds": "[1108,434][1184,462]",
+                                    "clickable": true,
+                                    "visible": false,
+                                    "children": [
+                                     {
+                                      "cls": "TextView",
+                                      "text": "逆袭",
+                                      "bounds": "[1108,434][1156,462]",
+                                      "visible": false
+                                     },
+                                     {
+                                      "cls": "View",
+                                      "bounds": "[1160,436][1184,460]",
+                                      "visible": false
+                                     }
+                                    ]
+                                   },
+                                   {
+                                    "cls": "View",
+                                    "bounds": "[1228,434][1304,462]",
+                                    "clickable": true,
+                                    "visible": false,
+                                    "children": [
+                                     {
+                                      "cls": "TextView",
+                                      "text": "修真",
+                                      "bounds": "[1228,434][1276,462]",
+                                      "visible": false
+                                     },
+                                     {
+                                      "cls": "View",
+                                      "bounds": "[1280,436][1304,460]",
+                                      "visible": false
+                                     }
+                                    ]
+                                   },
+                                   {
+                                    "cls": "TextView",
+                                    "text": "剧情简介",
+                                    "bounds": "[752,542][880,580]",
+                                    "visible": false
+                                   },
+                                   {
+                                    "cls": "View",
+                                    "bounds": "[752,609][1408,697]",
+                                    "clickable": true,
+                                    "visible": false,
+                                    "children": [
+                                     {
+                                      "cls": "TextView",
+                                      "text": "普通青年张凡受尽未婚妻月瑶及其家人白眼羞辱，遭雷劈意外获得太一药神传承，身怀医术与修… ",
+                                      "bounds": "[752,609][1408,697]",
+                                      "visible": false
+                                     },
+                                     {
+                                      "cls": "TextView",
+                                      "text": "展开",
+                                      "bounds": "[1340,653][1396,697]",
+                                      "clickable": true,
+                                      "visible": false
+                                     }
+                                    ]
+                                   },
+                                   {
+                                    "cls": "View",
+                                    "bounds": "[744,721][912,943]",
+                                    "visible": false,
+                                    "children": [
+                                     {
+                                      "cls": "View",
+                                      "bounds": "[744,721][880,943]",
+                                      "clickable": true,
+                                      "visible": false,
+                                      "children": [
+                                       {
+                                        "cls": "View",
+                                        "bounds": "[752,721][864,853]",
+                                        "clickable": true,
+                                        "visible": false,
+                                        "children": [
+                                         {
+                                          "cls": "View",
+                                          "bounds": "[752,721][864,833]",
+                                          "visible": false,
+                                          "children": [
+                                           {
+                                            "cls": "View",
+                                            "bounds": "[752,721][864,833]",
+                                            "visible": false,
+                                            "children": [
+                                             {
+                                              "cls": "View",
+                                              "desc": "avatar image",
+                                              "bounds": "[752,721][864,833]",
+                                              "visible": false
+                                             }
+                                            ]
+                                           }
+                                          ]
+                                         },
+                                         {
+                                          "cls": "View",
+                                          "bounds": "[766,813][850,853]",
+                                          "clickable": true,
+                                          "visible": false,
+                                          "children": [
+                                           {
+                                            "cls": "View",
+                                            "bounds": "[766,813][850,853]",
+                                            "visible": false,
+                                            "children": [
+                                             {
+                                              "cls": "View",
+                                              "desc": "Subscribed",
+                                              "bounds": "[778,825][794,841]",
+                                              "visible": false
+                                             },
+                                             {
+                                              "cls": "TextView",
+                                              "text": "关注",
+                                              "bounds": "[798,821][838,845]",
+                                              "visible": false
+                                             }
+                                            ]
+                                           }
+                                          ]
+                                         }
+                                        ]
+                                       },
+                                       {
+                                        "cls": "TextView",
+                                        "text": "熠星剧场",
+                                        "bounds": "[752,865][864,898]",
+                                        "visible": false
+                                       },
+                                       {
+                                        "cls": "TextView",
+                                        "text": "出品方",
+                                        "bounds": "[772,902][844,930]",
+                                        "visible": false
+                                       }
+                                      ]
+                                     }
+                                    ]
+                                   },
+                                   {
+                                    "cls": "ViewFactoryHolder",
+                                    "bounds": "[720,951][720,1208]",
+                                    "visible": false,
+                                    "children": [
+                                     {
+                                      "cls": "FrameLayout",
+                                      "bounds": "[720,951][720,1208]",
+                                      "visible": false,
+                                      "children": [
+                                       {
+                                        "cls": "ViewGroup",
+                                        "bounds": "[720,951][720,1208]",
+                                        "visible": false,
+                                        "children": [
+                                         {
+                                          "cls": "TextView",
+                                          "id": "com.phoenix.read:id\/k3j",
+                                          "text": "剧评",
+                                          "bounds": "[752,999][720,1042]",
+                                          "clickable": true,
+                                          "visible": false
+                                         },
+                                         {
+                                          "cls": "FrameLayout",
+                                          "id": "com.phoenix.read:id\/score_card_v2",
+                                          "bounds": "[752,1074][720,1191]",
+                                          "visible": false,
+                                          "children": [
+                                           {
+                                            "cls": "ViewGroup",
+                                            "bounds": "[752,1074][720,1191]",
+                                            "visible": false,
+                                            "children": [
+                                             {
+                                              "cls": "ViewGroup",
+                                              "id": "com.phoenix.read:id\/fpe",
+                                              "bounds": "[752,1074][720,1191]",
+                                              "clickable": true,
+                                              "visible": false,
+                                              "children": [
+                                               {
+                                                "cls": "ViewGroup",
+                                                "id": "com.phoenix.read:id\/hsi",
+                                                "bounds": "[752,1074][720,1191]",
+                                                "visible": false,
+                                                "children": [
+                                                 {
+                                                  "cls": "TextView",
+                                                  "id": "com.phoenix.read:id\/jfz",
+                                                  "text": "未开分",
+                                                  "bounds": "[784,1119][720,1147]",
+                                                  "visible": false
+                                                 }
+                                                ]
+                                               },
+                                               {
+                                                "cls": "ViewGroup",
+                                                "id": "com.phoenix.read:id\/hsp",
+                                                "bounds": "[920,1074][720,1191]",
+                                                "visible": false,
+                                                "children": [
+                                                 {
+                                                  "cls": "LinearLayout",
+                                                  "id": "com.phoenix.read:id\/hsq",
+                                                  "bounds": "[920,1098][720,1126]",
+                                                  "clickable": true,
+                                                  "visible": false,
+                                                  "children": [
+                                                   {
+                                                    "cls": "TextView",
+                                                    "id": "com.phoenix.read:id\/k9i",
+                                                    "text": "红果分",
+                                                    "bounds": "[920,1098][720,1126]",
+                                                    "visible": false
+                                                   },
+                                                   {
+                                                    "cls": "ImageView",
+                                                    "id": "com.phoenix.read:id\/f4j",
+                                                    "bounds": "[996,1100][720,1124]",
+                                                    "visible": false
+                                                   }
+                                                  ]
+                                                 },
+                                                 {
+                                                  "cls": "TextView",
+                                                  "id": "com.phoenix.read:id\/k9h",
+                                                  "bounds": "[920,1134][720,1167]",
+                                                  "visible": false
+                                                 }
+                                                ]
+                                               }
+                                              ]
+                                             },
+                                             {
+                                              "cls": "View",
+                                              "id": "com.phoenix.read:id\/hsr",
+                                              "bounds": "[1102,1102][720,1163]",
+                                              "visible": false
+                                             },
+                                             {
+                                              "cls": "ViewGroup",
+                                              "id": "com.phoenix.read:id\/hk2",
+                                              "bounds": "[1103,1074][720,1191]",
+                                              "clickable": true,
+                                              "visible": false,
+                                              "children": [
+                                               {
+                                                "cls": "ViewGroup",
+                                                "id": "com.phoenix.read:id\/hlh",
+                                                "bounds": "[1103,1088][720,1177]",
+                                                "visible": false,
+                                                "children": [
+                                                 {
+                                                  "cls": "TextView",
+                                                  "id": "com.phoenix.read:id\/kdm",
+                                                  "text": "点击或滑动评分",
+                                                  "bounds": "[1172,1088][720,1121]",
+                                                  "visible": false
+                                                 },
+                                                 {
+                                                  "cls": "View",
+                                                  "id": "com.phoenix.read:id\/ilb",
+                                                  "bounds": "[1128,1129][720,1177]",
+                                                  "visible": false
+                                                 }
+                                                ]
+                                               }
+                                              ]
+                                             }
+                                            ]
+                                           }
+                                          ]
+                                         },
+                                         {
+                                          "cls": "View",
+                                          "id": "com.phoenix.read:id\/kq6",
+                                          "bounds": "[720,1191][720,1192]",
+                                          "visible": false
+                                         },
+                                         {
+                                          "cls": "FrameLayout",
+                                          "id": "com.phoenix.read:id\/gvf",
+                                          "bounds": "[720,1208][720,1208]",
+                                          "visible": false,
+                                          "children": [
+                                           {
+                                            "cls": "FrameLayout",
+                                            "id": "com.phoenix.read:id\/go_",
+                                            "bounds": "[720,1208][720,1208]",
+                                            "visible": false,
+                                            "children": [
+                                             {
+                                              "cls": "RecyclerView",
+                                              "id": "com.phoenix.read:id\/how",
+                                              "bounds": "[720,1208][720,1208]",
+                                              "visible": false
+                                             }
+                                            ]
+                                           }
+                                          ]
+                                         }
+                                        ]
+                                       }
+                                      ]
+                                     }
+                                    ]
+                                   }
+                                  ]
+                                 }
+                                ]
+                               },
+                               {
+                                "cls": "View",
+                                "bounds": "[952,1504][1208,1584]",
+                                "clickable": true,
+                                "visible": false,
+                                "children": [
+                                 {
+                                  "cls": "TextView",
+                                  "text": "去发布",
+                                  "bounds": "[1058,1528][1142,1561]",
+                                  "visible": false
+                                 }
+                                ]
+                               },
+                               {
+                                "cls": "View",
+                                "bounds": "[752,66][1408,154]",
+                                "visible": false,
+                                "children": [
+                                 {
+                                  "cls": "ImageView",
+                                  "desc": "返回",
+                                  "bounds": "[752,86][800,134]",
+                                  "clickable": true,
+                                  "visible": false
+                                 },
+                                 {
+                                  "cls": "TextView",
+                                  "text": "太一药神：归凡济世",
+                                  "bounds": "[800,89][1232,131]",
+                                  "visible": false
+                                 },
+                                 {
+                                  "cls": "ImageView",
+                                  "desc": "分享",
+                                  "bounds": "[1272,86][1320,134]",
+                                  "clickable": true,
+                                  "visible": false
+                                 },
+                                 {
+                                  "cls": "ImageView",
+                                  "desc": "更多",
+                                  "bounds": "[1360,86][1408,134]",
+                                  "clickable": true,
+                                  "visible": false
+                                 }
+                                ]
+                               }
+                              ]
+                             }
+                            ]
+                           },
+                           {
+                            "cls": "FrameLayout",
+                            "bounds": "[720,154][720,1600]",
+                            "visible": false
+                           }
+                          ]
+                         }
+                        ]
+                       }
+                      ]
+                     },
+                     {
+                      "cls": "ImageView",
+                      "id": "com.phoenix.read:id\/jax",
+                      "bounds": "[360,800][360,800]",
+                      "visible": false
+                     }
+                    ]
+                   }
+                  ]
+                 }
+                ]
+               }
+              ]
+             },
+             {
+              "cls": "View",
+              "id": "com.phoenix.read:id\/fj",
+              "bounds": "[0,0][1,1]",
+              "visible": false
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

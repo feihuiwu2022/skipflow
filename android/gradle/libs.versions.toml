@@ -1,0 +1,13 @@
+[versions]
+agp = "9.4.1"
+junit = "4.13.2"
+orgJson = "20240303"
+mlkitTextChinese = "16.0.1"
+
+[libraries]
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+org-json = { group = "org.json", name = "json", version.ref = "orgJson" }
+mlkit-text-chinese = { group = "com.google.mlkit", name = "text-recognition-chinese", version.ref = "mlkitTextChinese" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }

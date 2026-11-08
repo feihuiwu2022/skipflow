@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SkipFlow 短剧续播</string>
+    <string name="service_label">SkipFlow 广告自动处理</string>
+    <string name="service_description">只在红果短剧等规则里列出的 App 中工作：识别广告界面，在广告允许跳过或上滑时自动帮你操作，倒计时期间可自动静音。不联网，不保存截图，不读取其他 App。</string>
+    <string name="open_settings">打开无障碍设置</string>
+    <string name="enabled">自动处理广告</string>
+    <string name="mute">倒计时广告期间静音</string>
+    <string name="auto_dump">遇到未识别的疑似广告时导出界面树（用于补规则）</string>
+    <string name="dump_later">5 秒后导出当前界面树</string>
+    <string name="reload_rules">重新加载规则</string>
+</resources>
