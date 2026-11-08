@@ -1,5 +1,12 @@
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.application)
+}
+
+// 发布签名：android/keystore.properties（不进 git），没有就出未签名的 release 包
+val keystoreProps = rootProject.file("keystore.properties").takeIf { it.isFile }?.let { f ->
+    Properties().apply { f.inputStream().use { load(it) } }
 }
 
 android {
@@ -21,6 +28,23 @@ android {
     sourceSets {
         // 规则 JSON 放在仓库根的 rules/ 下，安卓和以后的 iOS/桌面端共用一份
         getByName("main").assets.directories.add("../../rules")
+    }
+
+    signingConfigs {
+        if (keystoreProps != null) {
+            create("release") {
+                storeFile = file(keystoreProps.getProperty("storeFile"))
+                storePassword = keystoreProps.getProperty("storePassword")
+                keyAlias = keystoreProps.getProperty("keyAlias")
+                keyPassword = keystoreProps.getProperty("keyPassword")
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            if (keystoreProps != null) signingConfig = signingConfigs.getByName("release")
+        }
     }
 
     compileOptions {

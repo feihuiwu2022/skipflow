@@ -1,70 +1,101 @@
-# SkipFlow · 短剧广告自动续播
+<div align="center">
 
-看红果短剧时，广告一允许上滑或跳过，SkipFlow 就自动帮你上滑或点"跳过"；倒计时广告就等它结束再滑（可选静音，默认关闭）。你只管看剧。
+# SkipFlow 短剧续播
 
-- 不破解广告，不跳过倒计时，不修改红果，**没有网络权限**
-- 广告识别 = 无障碍界面树 + 屏幕文字识别（OCR）。截图只在内存里识别屏幕上下两条区域，不保存、不上传
-- 规则写在 JSON 里，App 改版后改规则就行，不用重新发版
-- 目前支持：Android 11+ 完整功能（OCR 依赖系统截屏接口），Android 8~10 只有界面树识别。
-  已实测：vivo V2443A / Android 15（上滑广告自动划走 ✅），ZTE 7534N / Android 11。iOS 方案见 [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md#5-ios-怎么做)
+**看短剧被广告打断？广告一能划走，SkipFlow 就替你划走。**
 
-> ⚠️ 仅供个人学习和自用。自动化操作可能违反目标 App 的用户协议，可能被检测，账号风险自负。请勿商用或打包分发。
+沉浸式刷红果短剧，不用再盯着"上滑继续观看短剧"手动去划。
 
-## 目录
+[⬇️ 下载 APK](https://github.com/feihuiwu2022/skipflow/releases/latest) · [使用说明](#三步开始使用) · [常见问题](#常见问题) · [参与开发](docs/DEVELOPMENT.md)
 
-```
-android/   Android 工程（AccessibilityService + 规则引擎）
-rules/     跨平台共用的广告规则（打包进 APK 的 assets）
-samples/   实测采集的广告界面样本
-docs/      架构设计、iOS 方案
-ios/       iOS（规划中）
-```
+开源 · 免费 · 无网络权限 · 无广告
 
-## 编译安装
+</div>
 
-需要 JDK 17+（Android Studio 自带的 jbr 即可）和 Android SDK。
+---
 
-```bash
-cd android
-./gradlew testDebugUnitTest assembleDebug
-adb install -r app/build/outputs/apk/debug/app-debug.apk
-```
+## 它能做什么
 
-装好后打开 SkipFlow →「打开无障碍设置」→ 开启「SkipFlow 广告自动处理」。
-国产 ROM 还必须**允许 SkipFlow 自启动、允许后台运行**，否则无障碍开关显示"已开启"，服务却根本没启动：
+| 你看到的广告 | SkipFlow 会怎么做 |
+|---|---|
+| 底部出现「上滑继续观看短剧」 | **自动上滑**，回到正片（实测 0.2~0.6 秒内） |
+| 「7秒后可继续上滑观看短剧」这类倒计时 | 安静等倒计时结束，**一到时间立刻上滑** |
+| 「跳过」「跳过广告」按钮 | 等按钮可点时**自动点掉**（实验性，还没在真机上遇到过） |
 
-- ZTE / nubia（MyOS）：设置 → 应用 → SkipFlow → 允许「自启动」「关联启动」「后台运行」。
-  症状：logcat 里 `AutoLaunchManagerService: ... SkipService ... SelfStart BlockResult = true`，
-  或 `CpuFreezerManagerServiceV2 ... frozen-list` 里有 SkipFlow 的 uid。
-- 小米 / 华为 / OPPO / vivo：同理，在"自启动管理""电池优化"里放行。
-- 每次覆盖安装后，部分 ROM 会把这些权限重置，需要重新放行并重开无障碍开关。
-- ZTE 实测：即使放行了自启动，系统绑定服务时仍可能被拦（`android_caller_act_null_black`）。
-  **先打开 SkipFlow 主界面，让它停在前台，再去开无障碍开关**就能启动。
-- ZTE 的后台冻结器（`CpuFreezerManagerServiceV2`）连前台服务也会冻，只放过有可见窗口的进程，
-  所以 SkipFlow 常驻一个 1×1 像素、透明、不拦截触摸的无障碍悬浮窗来保活。
+它**不会**破解广告、跳过倒计时、修改红果，也不会在正片里乱划——同一条广告最多只处理 2 次，划不动就停手。
 
-- vivo（OriginOS）实测：`adb shell settings put` 打开无障碍偶尔第一次不生效，再执行一次即可；
-  vivo 会限制 App 的 logcat 输出，看运行情况以 SkipFlow 主界面里的日志为准。
-- 注意：`uiautomator dump` 运行期间会暂停所有无障碍服务，调试时用 SkipFlow 自己的导出功能。
+## 三步开始使用
 
-服务正常运行时，通知栏会有一条常驻的「SkipFlow 运行中」。
+> 需要 **Android 11 及以上**。iPhone 暂不支持（原因见[这里](docs/ARCHITECTURE.md#5-ios-怎么做)）。
 
-## 调试和补规则
+1. **下载安装**：在 [Releases](https://github.com/feihuiwu2022/skipflow/releases/latest) 下载最新的 `SkipFlow-x.y.z.apk` 安装。
+2. **打开无障碍**：打开 SkipFlow → 点「打开无障碍设置」→ 找到「SkipFlow 广告自动处理」并打开。
+3. **允许后台运行**：按下面[你的手机品牌](#国产手机必看)放行自启动和后台运行。
 
-```bash
-# 查看运行日志
-adb logcat -s SkipFlow
+完成后通知栏会出现一条「SkipFlow 运行中」，回到红果正常看剧即可。
 
-# 导出当前界面树（在手机上停在广告页时执行）
-adb shell am broadcast -a com.skipflow.app.DUMP
+## 国产手机必看
 
-# 拉取导出的界面树
-adb pull /sdcard/Android/data/com.skipflow.app/files/dumps/
+国产系统会冻结后台 App。**不放行的话，开关显示"已开启"，实际却什么都不做。**
 
-# 热更新规则：推送后广播重新加载
-adb push rules/default.json /sdcard/Android/data/com.skipflow.app/files/rules.json
-adb shell am broadcast -a com.skipflow.app.RELOAD
-```
+| 品牌 | 设置路径 |
+|---|---|
+| 中兴 / 努比亚 | 设置 → 应用 → SkipFlow → 打开「自启动」「关联启动」「后台运行」 |
+| vivo / iQOO | 设置 → 电池 → 后台耗电管理 → SkipFlow → 允许后台高耗电 |
+| 小米 / 红米 | 设置 → 应用设置 → SkipFlow → 自启动 打开；省电策略 → 无限制 |
+| 华为 / 荣耀 | 设置 → 电池 → 启动管理 → SkipFlow → 改为手动管理，三项全开 |
+| OPPO / 一加 / realme | 设置 → 电池 → SkipFlow → 允许后台运行、允许自启动 |
 
-规则写法见 [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md#3-规则格式rulesdefaultjson)。
-新增规则请在 `android/app/src/test/.../RuleEngineTest.kt` 里补一个用例。
+> 菜单名称随系统版本略有不同。中兴已实测；其他品牌的路径仅供参考，欢迎提 PR 修正。
+
+> 💡 **开关打开没反应？** 先打开 SkipFlow 主界面让它停在前台，再去打开无障碍开关。
+> 💡 **更新 App 后失效？** 部分系统会在覆盖安装后重置这些权限，重新放行一次即可。
+
+## 安全与隐私
+
+- **没有网络权限**，任何数据都发不出手机。
+- **只在红果在前台时工作**，其他 App 一律不看、不截图、不操作。
+- 为了认出"上滑继续"这行字，会对**屏幕最上和最下两条区域**做本地文字识别；截图只在内存里处理，用完即丢，**不保存、不上传**。
+- 代码完全开源，欢迎审查。
+
+## 常见问题
+
+**Q：为什么需要无障碍权限？**
+自动上滑、点击只能通过系统的无障碍服务完成。SkipFlow 只订阅红果的界面变化。
+
+**Q：广告出现后要等一会儿才划走？**
+倒计时广告必须等倒计时结束才能划，这是红果的限制；倒计时一结束，实测 0.2~0.6 秒内划走。没有倒计时的广告通常几秒内处理，低端机会慢一些。
+
+**Q：会不会把正片也划走？**
+只有屏幕底部识别到"上滑继续观看短剧"这行字时才会上滑，正片底部是"选集"栏，不会触发。同一条广告最多处理 2 次。如果你遇到误划，欢迎[提 Issue](https://github.com/feihuiwu2022/skipflow/issues)。
+
+**Q：通知栏那条「SkipFlow 运行中」能关掉吗？**
+不建议。它和一个看不见的 1×1 像素透明窗口一起，防止系统把 SkipFlow 冻结。
+
+**Q：红果更新后不管用了？**
+红果改版可能让规则失效。请[提 Issue](https://github.com/feihuiwu2022/skipflow/issues) 并附上手机型号和红果版本号；SkipFlow 主界面的「5 秒后导出当前界面树」能帮我们定位问题。
+
+**Q：广告期间能静音吗？**
+可以，在 SkipFlow 主界面打开「倒计时广告期间静音」（默认关闭）。
+
+**Q：会被封号吗？**
+无法保证。自动化操作可能违反红果的用户协议，平台可能检测无障碍服务。请自行评估风险。
+
+## 已测试机型
+
+| 机型 | 系统 | 结果 |
+|---|---|---|
+| vivo V2443A | Android 15 | ✅ 上滑广告、倒计时广告 |
+| 中兴 7534N | Android 11 | ✅ 上滑广告、倒计时广告（需放行后台） |
+
+欢迎补充你的机型测试结果。
+
+## 参与开发
+
+- 编译、调试、补广告规则：[docs/DEVELOPMENT.md](docs/DEVELOPMENT.md)
+- 架构设计和 iOS 方案：[docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)
+- 广告规则是一个 JSON 文件：[rules/default.json](rules/default.json)，红果改版时改它就行
+
+## 免责声明
+
+本项目仅供个人学习和研究使用，与红果短剧及其关联公司无任何关系。使用自动化工具可能违反相关 App 的用户协议，由此产生的账号或其他风险由使用者自行承担。请勿用于商业用途。
