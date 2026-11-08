@@ -48,7 +48,12 @@ class Rule(
     val maxAttempts: Int = 2,
     val mute: Boolean = false,
 ) {
+    /** 只依赖屏幕 OCR 的规则：不用拍界面树快照就能判断，走快速路径。 */
+    val ocrOnly: Boolean get() = (all + any + none).all { it.cls == OCR_CLASS }
+
     companion object {
+        const val OCR_CLASS = "#ocr"
+
         fun fromJson(o: JSONObject) = Rule(
             key = o.getString("key"),
             name = o.optString("name", o.getString("key")),
@@ -80,8 +85,17 @@ class AppRules(
     val rules: List<Rule>,
 )
 
-/** regions：只识别这些屏幕区域 [l, t, r, b]（0~1），默认整屏。 */
-class OcrConfig(val intervalMs: Long, val regions: List<List<Double>>) {
+/**
+ * regions：只识别这些屏幕区域 [l, t, r, b]（0~1），默认整屏。
+ * trigger：界面树里一出现匹配的文字就加急截屏（树不可靠，只用来提速，不用来动手）。
+ * scale：识别前缩放比例，字大的界面用 0.5 能快好几倍。
+ */
+class OcrConfig(
+    val intervalMs: Long,
+    val regions: List<List<Double>>,
+    val trigger: Regex? = null,
+    val scale: Float = 1f,
+) {
     companion object {
         private val FULL_SCREEN = listOf(listOf(0.0, 0.0, 1.0, 1.0))
 
@@ -91,7 +105,12 @@ class OcrConfig(val intervalMs: Long, val regions: List<List<Double>>) {
                 val r = a.getJSONArray(i)
                 List(4) { r.getDouble(it) }
             }
-            return OcrConfig(o.optLong("intervalMs", 1200), regions)
+            return OcrConfig(
+                intervalMs = o.optLong("intervalMs", 1000),
+                regions = regions,
+                trigger = o.optStringOrNull("trigger")?.toRegex(),
+                scale = o.optDouble("scale", 1.0).toFloat().coerceIn(0.2f, 1f),
+            )
         }
     }
 }

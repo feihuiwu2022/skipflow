@@ -4,10 +4,10 @@ package com.skipflow.app.engine
 class RuleMatch(val rule: Rule, val nodes: List<UiNode>)
 
 object RuleEngine {
-    /** 按规则顺序返回第一条命中的规则；规则顺序就是优先级。 */
-    fun match(app: AppRules, root: UiNode, screen: Screen): RuleMatch? {
+    /** 按规则顺序返回第一条命中的规则；规则顺序就是优先级。filter 用来只看一部分规则。 */
+    fun match(app: AppRules, root: UiNode, screen: Screen, filter: (Rule) -> Boolean = { true }): RuleMatch? {
         for (rule in app.rules) {
-            if (!rule.enabled) continue
+            if (!rule.enabled || !filter(rule)) continue
             val nodes = ArrayList<UiNode>(rule.all.size)
             for (sel in rule.all) nodes += sel.find(root, screen) ?: break
             if (nodes.size != rule.all.size) continue

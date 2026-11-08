@@ -42,14 +42,60 @@ class RuleEngineTest {
         assertTrue(m!!.rule.action is Action.Swipe)
     }
 
+    @Test fun swipeToleratesOcrTypos() {
+        // 2026-11-08 vivo 实测 OCR 结果：一个字认错很常见
+        for (text in listOf("土滑继续观看短剧 会", "上滑继续观看短剧公", "上滑继续观春短剧会", "上清继续观看短剧")) {
+            val root = episodeTree().add(ocr(text, Box(228, 1524, 452, 1562)))
+            assertEquals(text, "swipe-continue", RuleEngine.match(app, root, screen)?.rule?.key)
+        }
+    }
+
     @Test fun staleAdNodesInTreeAloneDoNotTriggerSwipe() {
         // 2026-11-08 18:12 实测：划到正片后，广告节点仍以"可见"状态留在树里
         assertNull(RuleEngine.match(app, swipeAdTree(visible = true), screen))
     }
 
+    @Test fun countdownVariantWaitsInsteadOfSwiping() {
+        // 2026-11-08 19:27 vivo 实测：带倒计时的上滑广告，倒计时期间滑不动
+        for (text in listOf("7秒后可继续上滑观看短剧 会", "5秒后可继续止滑观看短剧会", "4秒后可继续上滑观看短剧会")) {
+            val ocrOnlyRoot = UiNode(visible = false).add(ocr(text, Box(150, 1524, 560, 1562)))
+            val m = RuleEngine.match(app, ocrOnlyRoot, screen)
+            assertEquals(text, "countdown", m?.rule?.key)
+            assertEquals(Action.Wait, m!!.rule.action)
+        }
+        // 倒计时结束后照常上滑
+        val ready = UiNode(visible = false).add(ocr("上滑继续观看短剧 会", Box(228, 1524, 452, 1562)))
+        assertEquals("swipe-continue", RuleEngine.match(app, ready, screen)?.rule?.key)
+    }
+
+    @Test fun normalEpisodeBottomBarOcrDoesNotSwipe() {
+        // 正片底部 OCR 实测内容
+        for (text in listOf("选集·已完结·全1000集", "0作者声明:内容由AI生成", "分享")) {
+            val root = episodeTree().add(ocr(text, Box(32, 1500, 600, 1580)))
+            assertNull(text, RuleEngine.match(app, root, screen))
+        }
+    }
+
     @Test fun ocrTextOutsideBottomRegionIsIgnored() {
         val root = episodeTree().add(ocr("上滑继续观看短剧", Box(272, 600, 496, 636)))
         assertNull(RuleEngine.match(app, root, screen))
+    }
+
+    @Test fun swipeActsImmediatelyAndOcrHasTrigger() {
+        val swipe = app.rules.first { it.key == "swipe-continue" }
+        assertEquals(0L, swipe.delayMs)
+        val ocr = app.ocr!!
+        assertEquals(1000L, ocr.intervalMs)
+        assertTrue(ocr.trigger!!.containsMatchIn("上滑继续观看短剧"))
+        assertTrue(ocr.trigger!!.containsMatchIn("广告"))
+        assertTrue(!ocr.trigger!!.containsMatchIn("免广告"))
+    }
+
+    @Test fun onlyPureOcrRulesTakeTheFastPath() {
+        val byKey = app.rules.associateBy { it.key }
+        assertTrue(byKey.getValue("swipe-continue").ocrOnly)
+        // 跳过按钮要靠界面树里的"Xs后"排除，不能只看 OCR
+        assertTrue(!byKey.getValue("skip-button").ocrOnly)
     }
 
     @Test fun normalEpisodeIsIgnored() {

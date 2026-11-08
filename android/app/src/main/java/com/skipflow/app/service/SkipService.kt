@@ -14,6 +14,7 @@ import android.view.WindowManager
 import android.view.accessibility.AccessibilityEvent
 import android.view.accessibility.AccessibilityNodeInfo
 import android.view.accessibility.AccessibilityWindowInfo
+import com.skipflow.app.engine.Action
 import com.skipflow.app.engine.AdSession
 import com.skipflow.app.engine.AdSession.Decision
 import com.skipflow.app.engine.RuleEngine
@@ -46,6 +47,8 @@ class SkipService : AccessibilityService() {
         private const val AUTO_DUMP_INTERVAL_MS = 20_000L
         private const val MAX_DUMPS = 60
         private const val OCR_SLACK_MS = 3000L
+        /** 动作结束后再等这么久（翻页动画）才重新截图判断。 */
+        private const val SETTLE_AFTER_ACTION_MS = 700L
 
         @Volatile
         var instance: SkipService? = null
@@ -65,16 +68,41 @@ class SkipService : AccessibilityService() {
     private var evalPending = false
     private var lastStatus = ""
 
+    // OCR 加急和耗时统计
+    private var hintPresent = false
+    private var hintAt = 0L
+    private var freshOcr = false
+    private var lastCleanShotAt = 0L
+
     private val evalRunnable = Runnable {
         evalPending = false
         evaluate()
     }
 
+    /**
+     * 只在目标 App 在前台时跑：一离开（或太久没收到它的事件）就停，
+     * 下一次收到目标 App 的事件时由 onAccessibilityEvent 重新启动。
+     */
+    private var tickerRunning = false
+    private var targetInFront = false
     private val ticker = object : Runnable {
         override fun run() {
-            if (SystemClock.uptimeMillis() - lastTargetEventAt < TICK_ACTIVE_WINDOW_MS) evaluate()
+            evaluate()
+            val idle = SystemClock.uptimeMillis() - lastTargetEventAt >= TICK_ACTIVE_WINDOW_MS
+            if (!targetInFront || idle) {
+                tickerRunning = false
+                AppLog.d("轮询停止（${if (idle) "长时间无事件" else "目标 App 不在前台"}）")
+                return
+            }
             handler.postDelayed(this, TICK_MS)
         }
+    }
+
+    private fun startTicker() {
+        if (tickerRunning) return
+        tickerRunning = true
+        AppLog.d("轮询启动")
+        handler.post(ticker)
     }
 
     /** adb 调试入口。只接受持有 DUMP 权限的发送方（adb shell 有，普通 App 没有）。 */
@@ -89,10 +117,18 @@ class SkipService : AccessibilityService() {
 
     override fun onServiceConnected() {
         instance = this
+        AppLog.init(this)
         KeepAlive.start(this)
         executor = ActionExecutor(this)
         audio = AudioController(this)
-        ocr = ScreenOcr(this)
+        ocr = ScreenOcr(
+            service = this,
+            isTargetForeground = { rules.forPackage(rootInActiveWindow?.packageName?.toString()) != null },
+        ) {
+            freshOcr = true
+            evaluate()
+        }
+        ocr.warmUp()
         reloadRules()
         val filter = IntentFilter().apply {
             addAction(ACTION_DUMP)
@@ -103,7 +139,7 @@ class SkipService : AccessibilityService() {
         } else {
             registerReceiver(receiver, filter, android.Manifest.permission.DUMP, null)
         }
-        handler.post(ticker)
+        startTicker()
         AppLog.i("无障碍服务已连接")
     }
 
@@ -111,6 +147,7 @@ class SkipService : AccessibilityService() {
         val pkg = event.packageName?.toString() ?: return
         if (rules.forPackage(pkg) == null) return
         lastTargetEventAt = SystemClock.uptimeMillis()
+        startTicker()
         if (event.eventType == AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED) {
             updateActivity(pkg, event.className?.toString())
         }
@@ -124,6 +161,7 @@ class SkipService : AccessibilityService() {
 
     override fun onDestroy() {
         instance = null
+        KeepAlive.stop(this)
         stopForeground(STOP_FOREGROUND_REMOVE)
         handler.removeCallbacksAndMessages(null)
         runCatching { unregisterReceiver(receiver) }
@@ -156,26 +194,66 @@ class SkipService : AccessibilityService() {
 
     private fun evaluate() {
         if (!Prefs.enabled(this)) return leaveAd()
-        val active = rootInActiveWindow ?: return leaveAd()
+        val active = rootInActiveWindow
+        if (active == null) {
+            return leaveAd()
+        }
         val pkg = active.packageName?.toString()
-        val app = rules.forPackage(pkg) ?: return leaveAd()
+        val app = rules.forPackage(pkg)
+        if (app == null) {
+            return leaveAd()
+        }
         val activity = currentActivity
         if (app.activities.isNotEmpty() && activity != null && activity !in app.activities) return leaveAd()
+        targetInFront = true
 
         val screen = screenSize()
+        val cfg = app.ocr
+        val ocrNodes = cfg?.let { ocr.nodes(maxAgeMs = it.intervalMs + OCR_SLACK_MS) }.orEmpty()
+
+        // 快速路径：刚出的 OCR 结果先只匹配"纯 OCR"规则。不用拍界面树快照——
+        // 红果的树有几千个节点，vivo 上拍一次要 ~1 秒，这 1 秒就是"识别完到动手"的延迟
+        if (freshOcr && ocrNodes.isNotEmpty()) {
+            val ocrRoot = UiNode(cls = "#ocr-root", visible = false).apply { ocrNodes.forEach { add(it) } }
+            // 按完整的优先级顺序匹配：前面的倒计时规则命中就该等，不能被后面的上滑规则抢先。
+            // 只认纯 OCR 规则或"只等待"的规则——别的规则可能需要界面树里的排除条件
+            val fast = RuleEngine.match(app, ocrRoot, screen)
+                ?.takeIf { it.rule.ocrOnly || it.rule.action == Action.Wait }
+            if (fast != null) {
+                AppLog.d("OCR 快速路径命中 ${fast.rule.key}")
+                freshOcr = false
+                return handle(session.update(fast), screen, null, app.suspect)
+            }
+        }
+
         val root = NodeSnapshot.build(targetRoots(pkg!!, active))
-        app.ocr?.let { cfg ->
-            ocr.requestIfDue(cfg.intervalMs, cfg.regions)
-            // 截屏 + 识别本身要 1~2 秒，结果按截屏时刻算龄，留足余量
-            ocr.nodes(maxAgeMs = cfg.intervalMs + OCR_SLACK_MS).forEach { root.add(it) }
+        if (cfg != null) {
+            // 界面树里刚出现广告迹象（不够可靠，不直接动手）：让截屏加急，省掉等下一轮的时间
+            val hint = cfg.trigger != null &&
+                root.walk().any { n -> n.isOnScreen(screen) && n.label?.let { cfg.trigger.containsMatchIn(it) } == true }
+            if (hint && !hintPresent) {
+                hintAt = SystemClock.uptimeMillis()
+                ocr.urgent()
+            }
+            hintPresent = hint
+            ocr.requestIfDue(cfg.intervalMs, cfg.regions, cfg.scale)
+            ocrNodes.forEach { root.add(it) }
         }
         val match = RuleEngine.match(app, root, screen)
-        when (val d = session.update(match)) {
+        if (freshOcr) {
+            freshOcr = false
+            if (match == null) lastCleanShotAt = ocr.timing?.requestedAt ?: 0L
+        }
+        handle(session.update(match), screen, root, app.suspect)
+    }
+
+    private fun handle(decision: Decision, screen: Screen, root: UiNode?, suspect: Regex?) {
+        when (val d = decision) {
             Decision.Idle -> {
                 if (lastStatus.isNotEmpty()) AppLog.i("广告结束")
                 lastStatus = ""
                 audio.restore()
-                maybeAutoDump(app.suspect, root, screen)
+                if (root != null) maybeAutoDump(suspect, root, screen)
             }
             is Decision.Waiting -> {
                 status("检测到「${d.rule.name}」，等待中")
@@ -183,8 +261,9 @@ class SkipService : AccessibilityService() {
             }
             is Decision.Act -> {
                 val ok = executor.perform(d.match, screen)
-                ocr.invalidate()
                 AppLog.i("「${d.match.rule.name}」第 ${d.attempt} 次处理：${if (ok) "已执行" else "执行失败"}")
+                if (d.attempt == 1) logLatency()
+                ocr.invalidate(settleMs = ((d.match.rule.action as? Action.Swipe)?.durationMs ?: 0L) + SETTLE_AFTER_ACTION_MS)
                 if (ok && d.attempt == 1) Prefs.incHandled(this)
                 lastStatus = "acted"
             }
@@ -193,6 +272,20 @@ class SkipService : AccessibilityService() {
                 dumpTree("gave-up")
             }
         }
+    }
+
+    /**
+     * 耗时分解。广告出现的确切时刻不知道，只知道它落在"上一张没广告的截屏"和
+     * "第一张有广告的截屏"之间；界面树提示可用时再给一个参考。
+     */
+    private fun logLatency() {
+        val now = SystemClock.uptimeMillis()
+        val t = ocr.timing ?: return
+        val parts = mutableListOf("截屏 ${t.shotMs}", "识别 ${t.ocrMs}", "结果→动手 ${now - t.doneAt}")
+        val window = if (lastCleanShotAt in 1 until t.requestedAt) "${now - t.requestedAt}~${now - lastCleanShotAt}" else "≥${now - t.requestedAt}"
+        // 树里的广告节点经常一直挂着（实测能挂一分钟），太久远的提示没有参考意义
+        val hint = if (hintPresent && hintAt > 0 && now - hintAt < 15_000) "，树提示→动手 ${now - hintAt}" else ""
+        AppLog.i("耗时(ms)：${parts.joinToString(" + ")}；广告出现→动手 $window$hint")
     }
 
     private fun status(s: String) {
@@ -204,6 +297,8 @@ class SkipService : AccessibilityService() {
         session.reset()
         if (::audio.isInitialized) audio.restore()
         lastStatus = ""
+        hintPresent = false
+        targetInFront = false
     }
 
     /** 目标 App 的所有应用窗口（Activity + 广告弹窗），拿不到就退回到活动窗口。 */

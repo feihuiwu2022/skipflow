@@ -27,12 +27,22 @@ class AdSessionTest {
         assertEquals(false, (session.update(hit(r)) as Decision.GaveUp).first)
     }
 
-    @Test fun adDisappearingResetsTheSession() {
+    @Test fun adDisappearingResetsTheSessionAfterCooldown() {
         val r = rule(delay = 0)
         assertTrue(session.update(hit(r)) is Decision.Act)
+        now = 3000
         assertEquals(Decision.Idle, session.update(null))
-        now = 100
+        now = 3100
         assertEquals(1, (session.update(hit(r)) as Decision.Act).attempt)
+    }
+
+    @Test fun missingFramesDuringCooldownDoNotResetAttempts() {
+        // 动手后 OCR 结果被清空，冷却期内看不到广告不算结束；广告还在就记作第 2 次
+        val r = rule(delay = 0)
+        assertTrue(session.update(hit(r)) is Decision.Act)
+        now = 500; assertTrue(session.update(null) is Decision.Waiting)
+        now = 2600; assertEquals(2, (session.update(hit(r)) as Decision.Act).attempt)
+        now = 5200; assertTrue(session.update(hit(r)) is Decision.GaveUp)
     }
 
     @Test fun switchingRuleRestartsTimer() {

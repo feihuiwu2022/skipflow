@@ -27,11 +27,15 @@ class AdSession(private val clock: () -> Long) {
     private var gaveUp = false
 
     fun update(match: RuleMatch?): Decision {
+        val now = clock()
         if (match == null) {
+            // 动手后的冷却期内看不到广告，不急着判定结束：截图要重新拍、OCR 偶尔漏一帧。
+            // 否则每次动手都会马上"结束"，attempts 清零，maxAttempts 就形同虚设。
+            val rule = current
+            if (rule != null && attempts > 0 && now - lastActionAt < rule.cooldownMs) return Decision.Waiting(rule)
             reset()
             return Decision.Idle
         }
-        val now = clock()
         val rule = match.rule
         if (rule.key != current?.key) {
             reset()

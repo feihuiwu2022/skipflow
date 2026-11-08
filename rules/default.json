@@ -7,7 +7,11 @@
       "name": "红果短剧",
       "activities": [],
       "suspect": "广告|跳过|上滑继续|\\d+\\s*[sS秒]\\s*后",
-      "ocr": { "intervalMs": 1200, "regions": [[0, 0, 1, 0.12], [0, 0.85, 1, 1]] },
+      "ocr": {
+        "intervalMs": 1000,
+        "regions": [[0, 0, 1, 0.12], [0, 0.85, 1, 1]],
+        "trigger": "上滑继续观看|^广告$|跳过"
+      },
       "rules": [
         {
           "key": "skip-button",
@@ -22,15 +26,16 @@
         {
           "key": "swipe-continue",
           "name": "上滑继续观看短剧",
-          "all": [{ "cls": "#ocr", "textRegex": "上滑继续观看", "region": [0, 0.85, 1, 1] }],
+          "all": [{ "cls": "#ocr", "textRegex": "滑继续|看短剧|继续观.短剧", "region": [0, 0.85, 1, 1] }],
+          "none": [{ "cls": "#ocr", "textRegex": "\\d+\\s*[sS秒]\\s*后" }],
           "action": { "type": "swipe", "from": [0.5, 0.8], "to": [0.5, 0.2], "durationMs": 500 },
-          "delayMs": 800,
+          "delayMs": 0,
           "cooldownMs": 2500,
           "maxAttempts": 2
         },
         {
           "key": "countdown",
-          "name": "倒计时广告（等待，期间静音）",
+          "name": "倒计时广告（等倒计时结束）",
           "all": [{ "labelRegex": "\\d+\\s*[sS秒]\\s*后?\\s*可?\\s*(跳过|关闭|继续)" }],
           "action": { "type": "wait" },
           "mute": true

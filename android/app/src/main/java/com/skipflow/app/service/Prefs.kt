@@ -14,7 +14,8 @@ object Prefs {
     fun enabled(c: Context) = sp(c).getBoolean(KEY_ENABLED, true)
     fun setEnabled(c: Context, v: Boolean) = sp(c).edit().putBoolean(KEY_ENABLED, v).apply()
 
-    fun mute(c: Context) = sp(c).getBoolean(KEY_MUTE, true)
+    /** 默认关闭：用户反馈广告期间不需要静音，想要的可以在主界面打开。 */
+    fun mute(c: Context) = sp(c).getBoolean(KEY_MUTE, false)
     fun setMute(c: Context, v: Boolean) = sp(c).edit().putBoolean(KEY_MUTE, v).apply()
 
     /** 碰到疑似广告但没有规则命中时，自动导出界面树（用于补规则）。 */
